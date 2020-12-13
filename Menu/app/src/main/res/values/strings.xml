@@ -7,4 +7,6 @@
     <string name="user_nickname">User Nickname</string>
     <string name="example_nickname">Example Nickname</string>
     <string name="set">SET</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
 </resources>
