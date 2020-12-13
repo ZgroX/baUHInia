@@ -6,31 +6,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class Settings extends FrameLayout {
-    public Settings(Context context) {
+public class Login extends FrameLayout {
+    public Login(@NonNull Context context) {
         super(context);
         initComponent(context);
     }
 
-    public Settings(Context context, @Nullable AttributeSet attrs) {
+    public Login(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         initComponent(context);
     }
 
-    public Settings(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public Login(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initComponent(context);
     }
 
-    public Settings(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public Login(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initComponent(context);
     }
 
     private void initComponent(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.settings, this);
+        View v = inflater.inflate(R.layout.login, this);
     }
 }
