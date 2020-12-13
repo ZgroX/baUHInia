@@ -90,7 +90,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="20dp"
                 android:layout_toEndOf="@id/text_view_user_nickname"
-                android:text="@string/example_nickname" />
+                android:hint="@string/example_nickname" />
 
             <Button
                 android:layout_width="wrap_content"
