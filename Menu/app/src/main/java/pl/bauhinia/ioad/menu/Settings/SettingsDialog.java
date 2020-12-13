@@ -21,6 +21,11 @@ public class SettingsDialog extends Dialog implements View.OnClickListener {
         this.context = context;
     }
 
+    public SettingsDialog(@NonNull Context context, int themeResId) {
+        super(context, themeResId);
+        this.context = context;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

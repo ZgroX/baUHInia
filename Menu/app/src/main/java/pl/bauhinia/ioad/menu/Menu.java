@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import pl.bauhinia.ioad.menu.Settings.SettingsDialog;
+
 public class Menu extends AppCompatActivity {
 
     @Override
@@ -14,7 +16,7 @@ public class Menu extends AppCompatActivity {
     }
 
     public void settingButtonOnClick(View v) {
-
+        new SettingsDialog(this).show();
     }
 
     public void loginButtonOnClick(View v) {

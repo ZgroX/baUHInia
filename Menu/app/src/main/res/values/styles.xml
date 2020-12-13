@@ -1,6 +1,17 @@
 <resources>
 
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="alertDialogTheme">@style/DialogTheme</item>
+    </style>
+
     <style name="Widget.Theme.Menu.MyView" parent="">
         <item name="android:background">@color/gray_400</item>
+
+
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowFixedWidthMajor">0%</item>
+        <item name="windowFixedWidthMinor">0%</item>
     </style>
 </resources>
