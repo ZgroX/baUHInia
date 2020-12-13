@@ -7,6 +7,9 @@
     <string name="user_nickname">User Nickname</string>
     <string name="example_nickname">Example Nickname</string>
     <string name="set">SET</string>
-    <string name="login">Login</string>
     <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="settings">Settings</string>
+    <string name="open_map_lists">Open map lists</string>
+    <string name="open_element_editor">Open element editor</string>
 </resources>
