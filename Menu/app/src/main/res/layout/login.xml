@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -14,11 +14,11 @@
             android:id="@+id/editTextTextPersonName"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_marginVertical="10dp"
-            android:inputType="textPersonName"
+            android:autofillHints=""
+            android:ems="10"
             android:hint="@string/login"
-            android:autofillHints="" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -33,11 +33,9 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
-            android:text="@string/login"/>
+            android:text="@string/login" />
 
     </LinearLayout>
-
-
 
 
 </RelativeLayout>
