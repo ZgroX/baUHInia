@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Menu</string>
     <string name="example_string">Example String</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="map_auto_save">Map Auto Save</string>
+    <string name="mute">Mute</string>
+    <string name="user_nickname">User Nickname</string>
+    <string name="example_nickname">Example Nickname</string>
+    <string name="set">SET</string>
 </resources>
