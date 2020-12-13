@@ -1,4 +1,4 @@
-package pl.bauhinia.ioad.menu;
+package pl.bauhinia.ioad.menu.Settings;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,23 +8,25 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.Nullable;
 
-public class Settings extends FrameLayout {
-    public Settings(Context context) {
+import pl.bauhinia.ioad.menu.R;
+
+public class SettingsView extends FrameLayout {
+    public SettingsView(Context context) {
         super(context);
         initComponent(context);
     }
 
-    public Settings(Context context, @Nullable AttributeSet attrs) {
+    public SettingsView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         initComponent(context);
     }
 
-    public Settings(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SettingsView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initComponent(context);
     }
 
-    public Settings(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public SettingsView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initComponent(context);
     }
