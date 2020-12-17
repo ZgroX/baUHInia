@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BaUHInia">
+        <activity
+            android:name=".mapviewer.MapViewerMainActivity"
+            android:label="@string/title_activity_map_viewer_main"
+            android:theme="@style/Theme.BaUHInia.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
