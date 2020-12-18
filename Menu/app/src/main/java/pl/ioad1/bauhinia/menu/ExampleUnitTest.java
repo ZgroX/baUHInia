@@ -1,4 +1,4 @@
-package pl.bauhinia.ioad.menu;
+package pl.ioad1.bauhinia.menu;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package pl.bauhinia.ioad.menu;
+package pl.ioad1.bauhinia.menu;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("pl.bauhinia.ioad.menu", appContext.getPackageName());
+        assertEquals("pl.ioad1.bauhinia.menu", appContext.getPackageName());
     }
 }

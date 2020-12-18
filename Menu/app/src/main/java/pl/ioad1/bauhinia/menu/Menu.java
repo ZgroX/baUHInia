@@ -1,11 +1,11 @@
-package pl.bauhinia.ioad.menu;
+package pl.ioad1.bauhinia.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 
-import pl.bauhinia.ioad.menu.Settings.SettingsDialog;
+import pl.ioad1.bauhinia.menu.Settings.SettingsDialog;
 
 public class Menu extends AppCompatActivity {
 

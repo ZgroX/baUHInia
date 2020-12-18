@@ -1,16 +1,14 @@
-package pl.bauhinia.ioad.menu.Settings;
+package pl.ioad1.bauhinia.menu.Settings;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
 import androidx.annotation.NonNull;
 
-import pl.bauhinia.ioad.menu.R;
-import pl.bauhinia.ioad.menu.databinding.SettingsDialogBinding;
+import pl.ioad1.bauhinia.menu.databinding.SettingsDialogBinding;
 
 public class SettingsDialog extends Dialog implements View.OnClickListener {
 

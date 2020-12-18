@@ -1,4 +1,4 @@
-package pl.bauhinia.ioad.menu.Settings;
+package pl.ioad1.bauhinia.menu.Settings;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.Nullable;
 
-import pl.bauhinia.ioad.menu.R;
+import pl.ioad1.bauhinia.menu.R;
 
 public class SettingsView extends FrameLayout {
     public SettingsView(Context context) {
