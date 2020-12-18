@@ -20,7 +20,7 @@ public class SharedPreferencesHelper {
     }
 
     public static void saveDarkmode(@NonNull Context context, boolean darkmode) {
-        SharedPreferences.Editor editor = context.getSharedPreferences("user_settings", Context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = context.getSharedPreferences("settings", Context.MODE_PRIVATE).edit();
         editor.putBoolean("darkmode", darkmode);
         editor.apply();
     }
@@ -30,7 +30,7 @@ public class SharedPreferencesHelper {
     }
 
     public static void saveMapAutosave(@NonNull Context context, boolean autosave) {
-        SharedPreferences.Editor editor = context.getSharedPreferences("user_settings", Context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = context.getSharedPreferences("settings", Context.MODE_PRIVATE).edit();
         editor.putBoolean("autosave", autosave);
         editor.apply();
     }
@@ -40,13 +40,13 @@ public class SharedPreferencesHelper {
     }
 
     public static void saveMuted(@NonNull Context context, boolean mute) {
-        SharedPreferences.Editor editor = context.getSharedPreferences("user_settings", Context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = context.getSharedPreferences("settings", Context.MODE_PRIVATE).edit();
         editor.putBoolean("mute", mute);
         editor.apply();
     }
 
     public static void saveUsername(@NonNull Context context, String username) {
-        SharedPreferences.Editor editor = context.getSharedPreferences("user_settings", Context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = context.getSharedPreferences("settings", Context.MODE_PRIVATE).edit();
         editor.putString("nickname", username);
         editor.apply();
     }

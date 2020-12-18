@@ -14,4 +14,5 @@
     <string name="open_element_editor">Open element editor</string>
     <string name="button_yes">Apply</string>
     <string name="button_no">Cancel</string>
+    <string name="enter_nickname">Enter Nickname</string>
 </resources>
