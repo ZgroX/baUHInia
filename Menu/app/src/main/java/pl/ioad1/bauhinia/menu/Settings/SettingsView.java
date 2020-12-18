@@ -35,7 +35,7 @@ public class SettingsView extends FrameLayout {
 
     private void initComponent(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.settings, this).setId(R.id.settingsFrameLayout);
+        inflater.inflate(R.layout.settings, this);
         ((CheckBox) findViewById(R.id.dark_mode_checkbox)).setChecked(SharedPreferencesHelper.isDarkMode(context));
         ((CheckBox) findViewById(R.id.map_autosave_checkbox)).setChecked(SharedPreferencesHelper.isMapAutosave(context));
         ((CheckBox) findViewById(R.id.mute_checkbox)).setChecked(SharedPreferencesHelper.isMuted(context));

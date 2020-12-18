@@ -33,7 +33,7 @@ public class LoginView extends FrameLayout {
 
     private void initComponent(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.login, this).setId(R.id.loginFrameLayout);
+        inflater.inflate(R.layout.login, this);
     }
 
 
