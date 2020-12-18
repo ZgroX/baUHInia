@@ -28,8 +28,24 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        // Return a PlaceholderFragment that will contain list of maps or list of map templates
+        // based on which page the fragment will be.
+        ListFragment listFragment;
+
+        switch (position) {
+            case 0:
+                // Create fragment where map list will be.
+                listFragment = new ListFragment(ListFragment.FragmentType.MAP_LIST_FRAGMENT);
+                break;
+            case 1:
+                // Create fragment where map template list will be.
+                listFragment = new ListFragment(ListFragment.FragmentType.MAP_TEMPLATE_LIST_FRAGMENT);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + position);
+        }
+
+        return listFragment;
     }
 
     @Nullable
