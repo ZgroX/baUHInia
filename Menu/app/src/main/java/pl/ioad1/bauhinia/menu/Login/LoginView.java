@@ -3,7 +3,6 @@ package pl.ioad1.bauhinia.menu.Login;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
@@ -34,7 +33,7 @@ public class LoginView extends FrameLayout {
 
     private void initComponent(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.login, this);
+        inflater.inflate(R.layout.login, this).setId(R.id.loginFrameLayout);
     }
 
 

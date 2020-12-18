@@ -1,10 +1,10 @@
 package pl.ioad1.bauhinia.menu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import pl.ioad1.bauhinia.menu.Login.LoginDialog;
 import pl.ioad1.bauhinia.menu.Settings.SettingsDialog;
@@ -18,12 +18,12 @@ public class Menu extends AppCompatActivity {
     }
 
     public void settingButtonOnClick(View v) {
-        Dialog dialog =  new SettingsDialog(this);
+        Dialog dialog = new SettingsDialog(this);
         dialog.show();
     }
 
     public void loginButtonOnClick(View v) {
-        Dialog dialog =  new LoginDialog(this);
+        Dialog dialog = new LoginDialog(this);
         dialog.show();
     }
 
