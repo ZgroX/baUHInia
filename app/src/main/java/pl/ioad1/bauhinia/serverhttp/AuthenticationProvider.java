@@ -23,5 +23,4 @@ public class AuthenticationProvider {
     public static FirebaseUser getCurrentUser() {
         return mAuth.getCurrentUser();
     }
-
 }
