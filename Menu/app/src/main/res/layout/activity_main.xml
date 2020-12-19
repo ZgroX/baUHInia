@@ -35,6 +35,7 @@
             android:text="@string/open_map_lists" />
 
         <Button
+            android:id="@+id/elementEditorButton"
             android:layout_width="250dp"
             android:layout_height="55dp"
             android:onClick="showElementEditorButtonOnClick"

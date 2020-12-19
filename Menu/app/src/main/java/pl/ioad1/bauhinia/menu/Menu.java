@@ -3,12 +3,14 @@ package pl.ioad1.bauhinia.menu;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import pl.ioad1.bauhinia.menu.Login.LoginDialog;
-import pl.ioad1.bauhinia.menu.Settings.DarkMode;
 import pl.ioad1.bauhinia.menu.Settings.SettingsDialog;
+import pl.ioad1.bauhinia.menu.helpers.DarkModeHelper;
+import pl.ioad1.bauhinia.menu.helpers.GlobalVariables;
 import pl.ioad1.bauhinia.menu.helpers.SharedPreferencesHelper;
 
 public class Menu extends AppCompatActivity {
@@ -17,7 +19,8 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DarkMode.setDarkMode(SharedPreferencesHelper.isDarkMode(this));
+        DarkModeHelper.setDarkMode(SharedPreferencesHelper.isDarkMode(this));
+        setElementEditorVisible();
     }
 
     public void settingButtonOnClick(View v) {
@@ -38,5 +41,14 @@ public class Menu extends AppCompatActivity {
 
     }
 
+    public void setElementEditorVisible() {
+        boolean isVisible = GlobalVariables.getInstance().isUserAuthenticated();
+        Button elementEditorButton = (Button) findViewById(R.id.elementEditorButton);
+        if (isVisible) {
+            elementEditorButton.setVisibility(View.VISIBLE);
+            return;
+        }
+        elementEditorButton.setVisibility(View.INVISIBLE);
+    }
 
 }

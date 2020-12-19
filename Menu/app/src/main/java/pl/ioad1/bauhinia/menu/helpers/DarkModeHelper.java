@@ -1,15 +1,15 @@
-package pl.ioad1.bauhinia.menu.Settings;
+package pl.ioad1.bauhinia.menu.helpers;
 
 import androidx.appcompat.app.AppCompatDelegate;
 
-public class DarkMode {
+public class DarkModeHelper {
 
-    private static final DarkMode INSTANCE = new DarkMode();
+    private static final DarkModeHelper INSTANCE = new DarkModeHelper();
 
-    private DarkMode() {
+    private DarkModeHelper() {
     }
 
-    public DarkMode getInstance(){
+    public static DarkModeHelper getInstance(){
         return INSTANCE;
     }
 

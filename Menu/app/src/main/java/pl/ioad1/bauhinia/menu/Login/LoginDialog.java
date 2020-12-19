@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import androidx.annotation.Nullable;
 import pl.ioad1.bauhinia.menu.R;
 import pl.ioad1.bauhinia.menu.User.User;
 import pl.ioad1.bauhinia.menu.databinding.LoginDialogBinding;
+import pl.ioad1.bauhinia.menu.helpers.GlobalVariables;
 
 public class LoginDialog extends Dialog implements View.OnClickListener {
 
@@ -45,6 +47,7 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
     public void onClickYes(View v) {
         // TODO: 18.12.2020 Przesyłać użytkownika dane
         User user = new User(((EditText) findViewById(R.id.editTextLogin)).getText().toString(), ((EditText) findViewById(R.id.editTextPassword)).getText().toString());
+        GlobalVariables.getInstance().setUserAuthenticated(true);
         dismiss();
     }
 
