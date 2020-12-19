@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pl.ioad1.bauhinia.mapeditor.GridViewItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_tile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop">
+<!--    android:src="@mipmap/ic_launcher"-->
+
+
+    <Button
+        android:id="@+id/button_in_gird"
+        android:background="@drawable/grid_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+</pl.ioad1.bauhinia.mapeditor.GridViewItem>

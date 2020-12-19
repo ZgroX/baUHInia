@@ -15,7 +15,10 @@ public class MapEditorMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_editor_main);
-        int [] test = {1,2,3,4,5,6,7,8,9};
+        int [] test = new int[25*25];
+        for (int i = 0; i < 25*25; i++){
+            test[i] = 1;
+        }
         GridView gridView = (GridView) findViewById(R.id.gvTemplate);
         TileAdapter tileAdapter = new TileAdapter(MapEditorMainActivity.this,test);
         gridView.setAdapter(tileAdapter);
