@@ -35,7 +35,7 @@ public class Menu extends AppCompatActivity {
         dialog.show();
     }
 
-    public void showMapListSButtonOnClick(View v) {
+    public void showMapListsButtonOnClick(View v) {
 //        Intent intent = new Intent(this, MapList.class);
 //        startActivity(intent);
     }
