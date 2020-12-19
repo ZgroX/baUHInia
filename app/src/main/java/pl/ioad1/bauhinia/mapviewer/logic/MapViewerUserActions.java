@@ -17,7 +17,7 @@ public class MapViewerUserActions {
         ACTION_CREATE_MAP_FROM_TEMPLATE
     }
 
-    private ArrayList<Action> allowedActions;
+    private ArrayList<Action> allowedActions = new ArrayList<>();
 
     public void addAllowedAction(Action action) {
         allowedActions.add(action);

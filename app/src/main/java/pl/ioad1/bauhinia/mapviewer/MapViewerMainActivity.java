@@ -32,6 +32,8 @@ public class MapViewerMainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+
+
     }
 
     private void initLogic(MapsPresentation.UserType userType) {
