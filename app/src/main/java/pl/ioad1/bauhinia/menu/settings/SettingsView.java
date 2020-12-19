@@ -1,4 +1,4 @@
-package pl.ioad1.bauhinia.menu.Settings;
+package pl.ioad1.bauhinia.menu.settings;
 
 import android.content.Context;
 import android.util.AttributeSet;

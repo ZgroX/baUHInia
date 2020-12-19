@@ -1,4 +1,4 @@
-package pl.ioad1.bauhinia.menu.User;
+package pl.ioad1.bauhinia.menu.user;
 
 public class User {
 

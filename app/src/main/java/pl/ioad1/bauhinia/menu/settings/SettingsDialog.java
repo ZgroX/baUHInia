@@ -1,4 +1,4 @@
-package pl.ioad1.bauhinia.menu.Settings;
+package pl.ioad1.bauhinia.menu.settings;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -9,7 +9,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import pl.ioad1.bauhinia.menu.R;
 import pl.ioad1.bauhinia.menu.databinding.SettingsDialogBinding;

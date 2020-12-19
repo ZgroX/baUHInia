@@ -1,4 +1,4 @@
-package pl.ioad1.bauhinia.menu.Login;
+package pl.ioad1.bauhinia.menu.login;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 
 import pl.ioad1.bauhinia.menu.Menu;
 import pl.ioad1.bauhinia.menu.R;
-import pl.ioad1.bauhinia.menu.User.User;
+import pl.ioad1.bauhinia.menu.user.User;
 import pl.ioad1.bauhinia.menu.databinding.LoginDialogBinding;
 import pl.ioad1.bauhinia.menu.helpers.GlobalVariables;
 

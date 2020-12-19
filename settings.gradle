@@ -1,3 +1,2 @@
 include ':app'
-include ':menu'
 rootProject.name = "baUHInia"

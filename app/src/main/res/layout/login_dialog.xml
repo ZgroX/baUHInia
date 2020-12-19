@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <pl.ioad1.bauhinia.menu.Login.LoginView
+    <pl.ioad1.bauhinia.menu.login.LoginView
         android:id="@+id/settings_view_include"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pl.ioad1.bauhinia">
+    package="pl.ioad1.bauhinia.menu">
 
     <application
         android:allowBackup="true"
@@ -8,8 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BaUHInia">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.Menu">
+        <activity android:name=".Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

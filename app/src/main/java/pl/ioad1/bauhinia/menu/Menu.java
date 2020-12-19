@@ -1,15 +1,14 @@
 package pl.ioad1.bauhinia.menu;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import pl.ioad1.bauhinia.menu.Login.LoginDialog;
-import pl.ioad1.bauhinia.menu.Settings.SettingsDialog;
+import pl.ioad1.bauhinia.menu.login.LoginDialog;
+import pl.ioad1.bauhinia.menu.settings.SettingsDialog;
 import pl.ioad1.bauhinia.menu.helpers.DarkModeHelper;
 import pl.ioad1.bauhinia.menu.helpers.GlobalVariables;
 import pl.ioad1.bauhinia.menu.helpers.SharedPreferencesHelper;

@@ -1,4 +1,4 @@
-package pl.ioad1.bauhinia.menu.Login;
+package pl.ioad1.bauhinia.menu.login;
 
 import android.content.Context;
 import android.util.AttributeSet;
