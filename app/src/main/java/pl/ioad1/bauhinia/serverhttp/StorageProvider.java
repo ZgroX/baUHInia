@@ -41,5 +41,4 @@ public class StorageProvider {
         StorageReference fileReference = storage.getReference().child(path);
         return fileReference.delete();
     }
-
 }
