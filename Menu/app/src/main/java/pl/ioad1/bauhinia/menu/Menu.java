@@ -29,7 +29,8 @@ public class Menu extends AppCompatActivity {
     }
 
     public void loginButtonOnClick(View v) {
-        Dialog dialog = new LoginDialog(this);
+        LoginDialog dialog = new LoginDialog(this);
+        dialog.setOnLoginListener(this::setElementEditorVisible);
         dialog.show();
     }
 
