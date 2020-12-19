@@ -1,65 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ca5be69e-ec78-4c7d-984e-5e2a87b1b209" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/baUHInia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/baUHInia.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/proguard-rules.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/java/pl/ioad1/bauhinia/menu/Login/LoginDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/Login/LoginDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/java/pl/ioad1/bauhinia/menu/Login/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/Login/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/java/pl/ioad1/bauhinia/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/java/pl/ioad1/bauhinia/menu/Settings/SettingsDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/Settings/SettingsDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/java/pl/ioad1/bauhinia/menu/Settings/SettingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/Settings/SettingsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/java/pl/ioad1/bauhinia/menu/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/java/pl/ioad1/bauhinia/menu/helpers/DarkModeHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/helpers/DarkModeHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/java/pl/ioad1/bauhinia/menu/helpers/GlobalVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/helpers/GlobalVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/java/pl/ioad1/bauhinia/menu/helpers/SharedPreferencesHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/helpers/SharedPreferencesHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/layout/login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/layout/login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/layout/login_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/layout/login_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/layout/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/layout/settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/layout/settings_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/layout/settings_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/values-night/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/values-night/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/values/ids.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/values/ids.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/res/values/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/src/main/java/pl/ioad1/bauhinia/menu/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,8 +45,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-viewD:/Dokumenty/Dokumenty/Studia/5_semestr/Inzynieria_Oprogramowania/Bauhinia/baUHInia/Menu/src/main/java/pl/ioad1/bauhinia/menu/Settings/SettingsView.java_SELECTED" value="SettingsView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="multi-representation-previewD:/Dokumenty/Dokumenty/Studia/5_semestr/Inzynieria_Oprogramowania/Bauhinia/baUHInia/Menu/src/main/java/pl/ioad1/bauhinia/menu/Settings/SettingsView.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
@@ -105,7 +56,7 @@
       <recent name="D:\Dokumenty\Dokumenty\Studia\5_semestr\Inzynieria_Oprogramowania\Bauhinia\baUHInia" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.menu">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -113,7 +64,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="baUHInia.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -170,7 +121,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="menu" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="menu" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="baUHInia.menu" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
