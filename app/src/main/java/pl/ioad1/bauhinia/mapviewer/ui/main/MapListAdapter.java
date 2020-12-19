@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -47,9 +49,30 @@ public class MapListAdapter extends BaseAdapter {
         TextView mapNameTextView = (TextView) view.findViewById(R.id.map_list_item_name_textview);
         TextView mapTemplateNameTextView = (TextView) view.findViewById(R.id.map_list_item_map_template_name_textview);
 
+        ImageButton deleteBtn = (ImageButton) view.findViewById(R.id.deleteMapBtn);
+        ImageButton infoBtn = (ImageButton) view.findViewById(R.id.moreInfosMapBtn);
+
+        ClickingButtons(deleteBtn, infoBtn);
+
         mapNameTextView.setText(item.name);
         mapTemplateNameTextView.setText(Integer.toString(item.mapTemplateId));
 
         return view;
+    }
+
+    public void ClickingButtons(ImageButton deleteBtn, ImageButton infoBtn) {
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "delete button", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        infoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "information button", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
