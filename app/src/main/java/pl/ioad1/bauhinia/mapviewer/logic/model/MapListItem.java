@@ -10,4 +10,8 @@ public class MapListItem {
         this.name = name;
         this.mapTemplateId = mapTemplateId;
     }
+
+    public String getName() {
+        return name;
+    }
 }

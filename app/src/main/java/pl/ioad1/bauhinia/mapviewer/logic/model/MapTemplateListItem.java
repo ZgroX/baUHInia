@@ -12,4 +12,8 @@ public class MapTemplateListItem {
         this.district = district;
         this.maxBudget = maxBudget;
     }
+
+    public String getName() {
+        return name;
+    }
 }

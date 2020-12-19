@@ -2,8 +2,6 @@ package pl.ioad1.bauhinia.mapviewer;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TabWidget;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -49,7 +47,6 @@ public class MapViewerMainActivity extends AppCompatActivity {
             }
                 break;
             case USER_CLERK: {
-
             }
                 break;
             default:

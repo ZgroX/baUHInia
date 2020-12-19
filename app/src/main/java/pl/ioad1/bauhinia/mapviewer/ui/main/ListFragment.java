@@ -54,7 +54,9 @@ public class ListFragment extends Fragment {
                 }
 
                 ListView mapListView = (ListView) root.findViewById(R.id.map_list_view);
-                mapListView.setAdapter(new MapListAdapter(container.getContext(), items));
+
+                MapListAdapter adapter = new MapListAdapter(container.getContext(), items);
+                mapListView.setAdapter(adapter);
             }
                 break;
             // if it is fragment that contains list of map templates

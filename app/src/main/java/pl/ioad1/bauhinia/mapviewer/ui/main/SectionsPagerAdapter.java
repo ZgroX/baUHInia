@@ -44,7 +44,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             default:
                 throw new IllegalStateException("Unexpected value: " + position);
         }
-
         return listFragment;
     }
 
