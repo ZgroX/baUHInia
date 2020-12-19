@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import pl.ioad1.bauhinia.menu.R;
 import pl.ioad1.bauhinia.menu.databinding.SettingsDialogBinding;
@@ -51,11 +52,19 @@ public class SettingsDialog extends Dialog implements View.OnClickListener {
     }
 
     public void onClickYes(View v) {
-        SharedPreferencesHelper.saveDarkmode(context, ((CheckBox) findViewById(R.id.dark_mode_checkbox)).isChecked());
+        setDarkMode();
         SharedPreferencesHelper.saveMapAutosave(context, ((CheckBox) findViewById(R.id.map_autosave_checkbox)).isChecked());
         SharedPreferencesHelper.saveMuted(context, ((CheckBox) findViewById(R.id.mute_checkbox)).isChecked());
         SharedPreferencesHelper.saveUsername(context, ((EditText) findViewById(R.id.edit_text_user_nickname)).getText().toString());
         dismiss();
+    }
+
+    private void setDarkMode(){
+        if (((CheckBox) findViewById(R.id.dark_mode_checkbox)).isChecked()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 
     public void onClickNo(View v) {
