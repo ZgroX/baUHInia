@@ -52,19 +52,11 @@ public class SettingsDialog extends Dialog implements View.OnClickListener {
     }
 
     public void onClickYes(View v) {
-        setDarkMode();
+        SharedPreferencesHelper.saveDarkmode(context, ((CheckBox) findViewById(R.id.dark_mode_checkbox)).isChecked());
         SharedPreferencesHelper.saveMapAutosave(context, ((CheckBox) findViewById(R.id.map_autosave_checkbox)).isChecked());
         SharedPreferencesHelper.saveMuted(context, ((CheckBox) findViewById(R.id.mute_checkbox)).isChecked());
         SharedPreferencesHelper.saveUsername(context, ((EditText) findViewById(R.id.edit_text_user_nickname)).getText().toString());
         dismiss();
-    }
-
-    private void setDarkMode(){
-        if (((CheckBox) findViewById(R.id.dark_mode_checkbox)).isChecked()) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
     }
 
     public void onClickNo(View v) {

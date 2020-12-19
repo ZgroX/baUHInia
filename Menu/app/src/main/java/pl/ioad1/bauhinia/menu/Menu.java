@@ -7,7 +7,9 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import pl.ioad1.bauhinia.menu.Login.LoginDialog;
+import pl.ioad1.bauhinia.menu.Settings.DarkMode;
 import pl.ioad1.bauhinia.menu.Settings.SettingsDialog;
+import pl.ioad1.bauhinia.menu.helpers.SharedPreferencesHelper;
 
 public class Menu extends AppCompatActivity {
 
@@ -15,6 +17,7 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DarkMode.setDarkMode(SharedPreferencesHelper.isDarkMode(this));
     }
 
     public void settingButtonOnClick(View v) {

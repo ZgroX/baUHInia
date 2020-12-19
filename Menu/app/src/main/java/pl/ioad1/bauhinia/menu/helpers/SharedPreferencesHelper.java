@@ -1,11 +1,15 @@
 package pl.ioad1.bauhinia.menu.helpers;
 
-import android.app.UiModeManager;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
+
+import pl.ioad1.bauhinia.menu.R;
+import pl.ioad1.bauhinia.menu.Settings.DarkMode;
 
 
 public class SharedPreferencesHelper {
@@ -15,6 +19,17 @@ public class SharedPreferencesHelper {
 
     public static String getUsername(@NonNull Context context) {
         return context.getSharedPreferences("settings", Context.MODE_PRIVATE).getString("nickname", "Anonymous");
+    }
+
+    public static boolean isDarkMode(@NonNull Context context) {
+        return context.getSharedPreferences("settings", Context.MODE_PRIVATE).getBoolean("darkmode", false);
+    }
+
+    public static void saveDarkmode(@NonNull Context context, boolean darkMode) {
+        SharedPreferences.Editor editor = context.getSharedPreferences("settings", Context.MODE_PRIVATE).edit();
+        editor.putBoolean("darkmode", darkMode);
+        editor.apply();
+        DarkMode.setDarkMode(darkMode);
     }
 
     public static boolean isMapAutosave(@NonNull Context context) {
