@@ -1,49 +1,26 @@
 package pl.ioad1.bauhinia.serverhttp;
 
-import android.util.Log;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class AuthenticationProvider extends AppCompatActivity {
-    private static final String TAG = "EmailPassword";
-    private FirebaseAuth mAuth;
+public class AuthenticationProvider {
+    private static final FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-    private FirebaseUser signIn(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d(TAG, "signInWithEmail:success");
-                        FirebaseUser user = mAuth.getCurrentUser();
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w(TAG, "signInWithEmail:failure", task.getException());
-                    }
-                });
-        return mAuth.getCurrentUser();
+    public static Task<AuthResult> signIn(String email, String password) {
+        return mAuth.signInWithEmailAndPassword(email, password);
     }
 
-    private void signInAsGuest() {
-        mAuth.signInAnonymously().addOnCompleteListener(this, task -> {
-            if (task.isSuccessful()) {
-                // Sign in success, update UI with the signed-in user's information
-                Log.d(TAG, "signInAsGuest:success");
-                FirebaseUser user = mAuth.getCurrentUser();
-            } else {
-                // If sign in fails, display a message to the user.
-                Log.w(TAG, "signInAsGuest:failure", task.getException());
-            }
-        });
+    public static Task<AuthResult> signInAsGuest() {
+        return mAuth.signInAnonymously();
     }
 
-    private void signOut() {
+    public static void signOut() {
         mAuth.signOut();
     }
 
-    public FirebaseUser getCurrentUser() {
+    public static FirebaseUser getCurrentUser() {
         return mAuth.getCurrentUser();
     }
 
