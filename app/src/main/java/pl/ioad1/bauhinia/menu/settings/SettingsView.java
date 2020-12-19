@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.Nullable;
 
-import pl.ioad1.bauhinia.menu.R;
+import pl.ioad1.bauhinia.R;
 import pl.ioad1.bauhinia.menu.helpers.SharedPreferencesHelper;
 
 public class SettingsView extends FrameLayout {

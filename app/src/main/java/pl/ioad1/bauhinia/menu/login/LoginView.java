@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import pl.ioad1.bauhinia.menu.R;
+import pl.ioad1.bauhinia.R;
 
 public class LoginView extends FrameLayout {
     public LoginView(@NonNull Context context) {

@@ -10,8 +10,8 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
-import pl.ioad1.bauhinia.menu.R;
-import pl.ioad1.bauhinia.menu.databinding.SettingsDialogBinding;
+import pl.ioad1.bauhinia.R;
+import pl.ioad1.bauhinia.databinding.SettingsDialogBinding;
 import pl.ioad1.bauhinia.menu.helpers.SharedPreferencesHelper;
 
 public class SettingsDialog extends Dialog implements View.OnClickListener {

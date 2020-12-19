@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import pl.ioad1.bauhinia.R;
 import pl.ioad1.bauhinia.menu.login.LoginDialog;
 import pl.ioad1.bauhinia.menu.settings.SettingsDialog;
 import pl.ioad1.bauhinia.menu.helpers.DarkModeHelper;
@@ -46,7 +47,7 @@ public class Menu extends AppCompatActivity {
 
     public void setElementEditorVisible() {
         boolean isVisible = GlobalVariables.getInstance().isUserAuthenticated();
-        Button elementEditorButton = (Button) findViewById(R.id.elementEditorButton);
+        Button elementEditorButton = findViewById(R.id.elementEditorButton);
         if (isVisible) {
             elementEditorButton.setVisibility(View.VISIBLE);
             return;

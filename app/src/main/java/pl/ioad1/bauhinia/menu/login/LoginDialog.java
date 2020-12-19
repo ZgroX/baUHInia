@@ -11,9 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import pl.ioad1.bauhinia.menu.Menu;
-import pl.ioad1.bauhinia.menu.R;
+import pl.ioad1.bauhinia.R;
 import pl.ioad1.bauhinia.menu.user.User;
-import pl.ioad1.bauhinia.menu.databinding.LoginDialogBinding;
+import pl.ioad1.bauhinia.databinding.LoginDialogBinding;
 import pl.ioad1.bauhinia.menu.helpers.GlobalVariables;
 
 public class LoginDialog extends Dialog implements View.OnClickListener {
