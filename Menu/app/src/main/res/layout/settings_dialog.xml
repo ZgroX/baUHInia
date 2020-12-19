@@ -7,7 +7,9 @@
     <pl.ioad1.bauhinia.menu.Settings.SettingsView
         android:id="@+id/settings_view_include"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,18 +20,18 @@
 
         <Button
             android:id="@+id/settings_dialog_button_yes"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.0"
             android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
             android:layout_marginEnd="10dp"
-            android:text="@string/button_yes"/>
+            android:layout_weight="1.0"
+            android:text="@string/button_yes" />
 
         <Button
             android:id="@+id/settings_dialog_button_no"
-            android:layout_marginStart="10dp"
             android:layout_width="0.0dip"
-            android:layout_weight="1.0"
             android:layout_height="fill_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1.0"
             android:text="@string/button_no" />
 
     </LinearLayout>
