@@ -1,80 +1,73 @@
 package pl.ioad1.bauhinia.sessionManager;
 
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.provider.MediaStore;
-
 import com.google.android.gms.tasks.Tasks;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import pl.ioad1.bauhinia.mapviewer.logic.model.MapListItem;
+import pl.ioad1.bauhinia.mapviewer.logic.model.MapTemplateListItem;
 import pl.ioad1.bauhinia.serverhttp.DatabaseProvider;
-import pl.ioad1.bauhinia.serverhttp.StorageProvider;
 
 public class MapProvider {
-    private String stringMaps = "Maps";
+    public ArrayList<MapListItem> getMapList() throws InterruptedException, ExecutionException, TimeoutException {
+        ArrayList<MapListItem> mapList = new ArrayList<>();
 
-    private Map<String, Object> elementToMap(MapListItem mapListItem) {
-        Map<String, Object> map = new HashMap<>();
+        QuerySnapshot table = Tasks.await(DatabaseProvider.getCollection(MapSender.STRING_MAPS), 10, TimeUnit.SECONDS);
+        for (DocumentSnapshot row : table.getDocuments()) {
 
-        map.put("name", mapListItem.getName());
-        map.put("mapTemplateId", element.getMapTemplateId());
+            mapList.add(new MapListItem(
+                    row.get("id"),
+                    row.get("name"),
+                    row.get("mapTemplateId"),
+                    row.get("placedElements")));
+        }
 
-        return map;
+        return mapList;
+    }
+
+    public ArrayList<MapTemplateListItem> getMapTemplateList() throws InterruptedException, ExecutionException, TimeoutException {
+        ArrayList<MapTemplateListItem> mapTemplateList = new ArrayList<>();
+
+        QuerySnapshot table = Tasks.await(DatabaseProvider.getCollection(MapSender.STRING_MAPS_TEMPLATE), 10, TimeUnit.SECONDS);
+        for (DocumentSnapshot row :
+                table.getDocuments()) {
+
+            mapTemplateList.add(new MapTemplateListItem(
+                    row.get("id"),
+                    row.get("name"),
+                    row.get("district"),
+                    row.get("maxBudget")));
+        }
+
+        return mapTemplateList;
     }
 
     public int sendMapListItem(MapListItem mapListItem) throws ExecutionException, InterruptedException, TimeoutException {
-        String id;
-
-        Map<String, Object> map = elementToMap(mapListItem);
-
-        DocumentReference documentReference = Tasks.await(DatabaseProvider.addDocument(stringElements, map), 3, TimeUnit.SECONDS);
-        id = (String) Tasks.await(documentReference.get(), 3, TimeUnit.SECONDS).get("id");
-//        StorageProvider.upload(mapListItem.getImage(), stringMaps + "//" + id);
-
-        return Integer.parseInt(id);
+        return MapSender.sendMapListItem(mapListItem);
     }
 
-    public MapListItem receiveMapListItem(int id, Activity activity)
-            throws IOException, InterruptedException, ExecutionException, TimeoutException {
-
-        DocumentSnapshot row = Tasks.await(
-                DatabaseProvider.getDocument(stringMaps, String.valueOf(id)),
-                3,
-                TimeUnit.SECONDS);
-
-        // Te linijki niżej to pod obrazek mapy, bo nie wiem czy mamy przechowywane
-        // jakieś bitmapy dla map, więc na wszelki tu jest jeśli jednak
-        // będzie potrzebne
-
-//        Uri imageUriTask = Tasks.await(
-//                StorageProvider.getDownloadUrl(stringMaps + "//" + id),
-//                3,
-//                TimeUnit.SECONDS);
-//        Bitmap bitmap = MediaStore.Images.Media.getBitmap(
-//                activity.getContentResolver(), imageUriTask);
-
-        if (row != null) {
-            return new MapListItem(
-                    row.get("id"),
-                    row.get("name"),
-                    row.get("mapTemplateId"));
-        }
-        return null;
+    public int sendMapTemplateListItem(MapTemplateListItem mapTemplateListItem) throws InterruptedException, ExecutionException, TimeoutException {
+        return MapSender.sendMapTemplateListItem(mapTemplateListItem);
     }
 
-    public void updateMapListItem(MapListItem mapListItem) {
-        Tasks.await(DatabaseProvider.updateDocument(
-                stringMaps,
-                elementToMap(mapListItem),
-                Integer.parseInt(mapListItem.getId())));
+    public static void deleteMapItem(String id) throws ExecutionException, InterruptedException {
+        Tasks.await(DatabaseProvider.deleteDocument(MapSender.STRING_MAPS, id));
+    }
+
+    public static void deleteMapTemplateItem(String id) throws ExecutionException, InterruptedException {
+        Tasks.await(DatabaseProvider.deleteDocument(MapSender.STRING_MAPS_TEMPLATE, id));
+    }
+
+    public static void deleteMapItem(MapListItem m) throws ExecutionException, InterruptedException {
+        Tasks.await(DatabaseProvider.deleteDocument(MapSender.STRING_MAPS, String.valueOf(m.getId())));
+    }
+
+    public static void deleteMapTemplateItem(MapTemplateListItem m) throws ExecutionException, InterruptedException {
+        Tasks.await(DatabaseProvider.deleteDocument(MapSender.STRING_MAPS_TEMPLATE, String.valueOf(m.getId())));
     }
 }

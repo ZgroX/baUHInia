@@ -10,21 +10,20 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import pl.ioad1.bauhinia.elementeditor.Element;
 import pl.ioad1.bauhinia.serverhttp.DatabaseProvider;
 import pl.ioad1.bauhinia.serverhttp.StorageProvider;
 
 public class ElementProvider {
-    private String stringElements = "Elements";
+    private static final String STRING_ELEMENTS = "Elements";
 
-    private Map<String, Object> elementToMap(Element element) {
+    private static Map<String, Object> elementToMap(Element element) {
         Map<String, Object> map = new HashMap<>();
 
         map.put("length", element.getLength());
@@ -36,28 +35,28 @@ public class ElementProvider {
         return map;
     }
 
-    public int sendElement(Element element) throws ExecutionException, InterruptedException, TimeoutException {
+    public static int sendElement(Element element) throws ExecutionException, InterruptedException, TimeoutException {
         String id;
 
         Map<String, Object> map = elementToMap(element);
 
-        DocumentReference documentReference = Tasks.await(DatabaseProvider.addDocument(stringElements, map), 3, TimeUnit.SECONDS);
+        DocumentReference documentReference = Tasks.await(DatabaseProvider.addDocument(STRING_ELEMENTS, map), 3, TimeUnit.SECONDS);
         id = (String) Tasks.await(documentReference.get(), 3, TimeUnit.SECONDS).get("id");
-        StorageProvider.upload(element.getImage(), stringElements + "//" + id);
+        StorageProvider.upload(element.getImage(), STRING_ELEMENTS + "//" + id);
 
         return Integer.parseInt(id);
     }
 
-    public Element receiveElement(int id, Activity activity)
+    public static Element receiveElement(int id, Activity activity)
             throws IOException, InterruptedException, ExecutionException, TimeoutException {
 
         DocumentSnapshot row = Tasks.await(
-                DatabaseProvider.getDocument(stringElements, String.valueOf(id)),
+                DatabaseProvider.getDocument(STRING_ELEMENTS, String.valueOf(id)),
                 3,
                 TimeUnit.SECONDS);
 
         Uri imageUriTask = Tasks.await(
-                StorageProvider.getDownloadUrl(stringElements + "//" + id),
+                StorageProvider.getDownloadUrl(STRING_ELEMENTS + "//" + id),
                 3,
                 TimeUnit.SECONDS);
 
@@ -77,10 +76,10 @@ public class ElementProvider {
         return null;
     }
 
-    public void updateElement(Element element) {
+    public static void updateElement(Element element) throws ExecutionException, InterruptedException {
         Tasks.await(DatabaseProvider.updateDocument(
-                stringElements,
+                STRING_ELEMENTS,
                 elementToMap(element),
-                Integer.parseInt(element.getId())));
+                String.valueOf(element.getId())));
     }
 }

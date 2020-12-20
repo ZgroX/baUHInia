@@ -13,28 +13,38 @@ public class Element implements Serializable {
 
     public Element(int id, int length, int width, String name, Bitmap image, float height, float transparent) {
 
-            this.id = id;
-            this.length = length;
-            this.width = width;
-            this.name = name;
-            this.image = image;
-            this.height = height;
-            this.transparent = transparent;
+        this.id = id;
+        this.length = length;
+        this.width = width;
+        this.name = name;
+        this.image = image;
+        this.height = height;
+        this.transparent = transparent;
     }
 
     public Element(Element element) {
 
-            this.id = element.id;
-            this.length = element.length;
-            this.width = element.width;
-            this.name = element.name;
-            this.image = element.image;
-            this.height = element.height;
-            this.transparent = element.transparent;
-
+        this.id = element.id;
+        this.length = element.length;
+        this.width = element.width;
+        this.name = element.name;
+        this.image = element.image;
+        this.height = element.height;
+        this.transparent = element.transparent;
     }
 
-    public Element() {}
+    public Element() {
+    }
+
+    public Element(Object id, Object length, Object width, Object name, Bitmap bitmap, Object height, Object transparent) {
+        this.id = (int) id;
+        this.length = (int) length;
+        this.width = (int) width;
+        this.name = (String) name;
+        this.image = bitmap;
+        this.height = (float) height;
+        this.transparent = (float) transparent;
+    }
 
     public int getId() {
         return id;
@@ -94,6 +104,6 @@ public class Element implements Serializable {
 
     @Override
     public String toString() {
-        return ("Name: "+ name + "\nHeigth: " + height + "\nLength: " + length + "\nWidth: " + width + "\nTransparent: " + transparent);
+        return ("Name: " + name + "\nHeigth: " + height + "\nLength: " + length + "\nWidth: " + width + "\nTransparent: " + transparent);
     }
 }
