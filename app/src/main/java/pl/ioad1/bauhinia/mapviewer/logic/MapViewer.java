@@ -30,8 +30,6 @@ public class MapViewer {
         Operations:
      */
 
-
-
     public final MapList getMapList() {
         return mapList;
     }

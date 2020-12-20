@@ -44,6 +44,8 @@ public class MapViewerMainActivity extends AppCompatActivity {
                 mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_EDIT_MAP);
                 mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_UPLOAD_MAP_TO_SERVER);
                 mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_GET_MAPS_FROM_LOCAL_STORAGE);
+                mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_GET_MORE_INFO_TEMPLATE);
+                mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_GET_MORE_INFO_MAP);
             }
                 break;
             case USER_CLERK: {
@@ -53,6 +55,8 @@ public class MapViewerMainActivity extends AppCompatActivity {
                 mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_PREVIEW_MAP);
                 mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_UPLOAD_MAP_TEMPLATE_TO_SERVER);
                 mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_GET_MAPS_FROM_SERVER);
+                mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_GET_MORE_INFO_TEMPLATE);
+                mapViewerUserActions.addAllowedAction(MapViewerUserActions.Action.ACTION_GET_MORE_INFO_MAP);
             }
                 break;
             default:

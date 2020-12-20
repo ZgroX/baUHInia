@@ -9,22 +9,31 @@
 
     <TextView
         android:id="@+id/map_list_item_name_textview"
-        android:layout_width="300dp"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:paddingStart="5dp"
         android:paddingTop="5dp"
         android:textColor="#F5F5F5"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/map_list_item_map_template_name_textview"
-        android:layout_width="300dp"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/map_list_item_name_textview"
-        android:paddingStart="5dp"
         android:paddingBottom="5dp"
         android:textColor="#F5F5F5"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textAlignment="center" />
+
+    <ImageButton
+        android:id="@+id/editMapBtn"
+        android:layout_width="42dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/moreInfosMapBtn"
+        android:background="#696969"/>
 
     <ImageButton
         android:id="@+id/moreInfosMapBtn"
@@ -34,7 +43,7 @@
         android:layout_marginEnd="0dp"
         android:layout_toStartOf="@+id/deleteMapBtn"
         android:background="#696969"
-        app:srcCompat="@android:drawable/ic_menu_info_details" />
+        app:srcCompat="@android:drawable/ic_info" />
 
     <ImageButton
         android:id="@+id/deleteMapBtn"
@@ -45,7 +54,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="10dp"
         android:background="#696969"
-        app:srcCompat="@android:drawable/ic_delete" />
+        app:srcCompat="@drawable/ic_delete" />
 
 
 </RelativeLayout>

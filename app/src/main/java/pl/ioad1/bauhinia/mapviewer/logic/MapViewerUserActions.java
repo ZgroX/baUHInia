@@ -14,7 +14,9 @@ public class MapViewerUserActions {
         ACTION_UPLOAD_MAP_TO_SERVER,
         ACTION_UPLOAD_MAP_TEMPLATE_TO_SERVER,
         ACTION_GET_MAPS_FROM_SERVER,
-        ACTION_GET_MAPS_FROM_LOCAL_STORAGE
+        ACTION_GET_MAPS_FROM_LOCAL_STORAGE,
+        ACTION_GET_MORE_INFO_MAP,
+        ACTION_GET_MORE_INFO_TEMPLATE
     }
 
     private ArrayList<Action> allowedActions = new ArrayList<>();

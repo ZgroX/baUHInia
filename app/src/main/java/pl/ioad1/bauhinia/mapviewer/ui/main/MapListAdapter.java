@@ -15,6 +15,8 @@ import androidx.appcompat.app.AlertDialog;
 import java.util.ArrayList;
 
 import pl.ioad1.bauhinia.R;
+import pl.ioad1.bauhinia.mapviewer.logic.MapViewer;
+import pl.ioad1.bauhinia.mapviewer.logic.MapViewerUserActions;
 import pl.ioad1.bauhinia.mapviewer.logic.model.MapListItem;
 
 public class MapListAdapter extends BaseAdapter {
@@ -52,11 +54,12 @@ public class MapListAdapter extends BaseAdapter {
         TextView mapNameTextView = (TextView) view.findViewById(R.id.map_list_item_name_textview);
         TextView mapTemplateNameTextView = (TextView) view.findViewById(R.id.map_list_item_map_template_name_textview);
 
-        // Button, which can be used also by resident and by clerk
+        // Button, which can show more infos, delete oraz edit map
         ImageButton deleteMapBtn = (ImageButton) view.findViewById(R.id.deleteMapBtn);
         ImageButton infoBtn = (ImageButton) view.findViewById(R.id.moreInfosMapBtn);
+        ImageButton editBtn = (ImageButton) view.findViewById(R.id.editMapBtn);
 
-        ClickingButtons(i, deleteMapBtn, infoBtn);
+        ClickingButtons(i, deleteMapBtn, infoBtn, editBtn);
 
         mapNameTextView.setText(item.name);
         mapTemplateNameTextView.setText(Integer.toString(item.mapTemplateId));
@@ -64,40 +67,74 @@ public class MapListAdapter extends BaseAdapter {
         return view;
     }
 
-    public void ClickingButtons(int position, ImageButton deleteMapBtn, ImageButton infoBtn) {
-        deleteMapBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // new window, where user can decide, if he is sure, that he want delete map
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setMessage("Czy na pewno chcesz usunąć mapę?")
-                        .setNegativeButton("Anuluj", null)
-                        .setPositiveButton("Tak", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                Toast.makeText(context, "you want delete button nr" + position, Toast.LENGTH_SHORT).show();
-                                // here I have to remove element from maps list, but now it doesn't work correctly
-                                //items.remove(position);
-                            }
-                        });
+    public void ClickingButtons(int position, ImageButton deleteBtn, ImageButton infoBtn, ImageButton editMapBtn) {
+        // use MapViewer to check, what actions are possible
+        MapViewer mapViewer = MapViewer.getInstance();
 
-                AlertDialog alert = builder.create();
-                alert.show();
-            }
-        });
+        // variables to know, what should be possible for user
+        boolean ifDelete = mapViewer.isActionAllowed((MapViewerUserActions.Action.ACTION_DELETE_MAP));
+        boolean ifInfo = mapViewer.isActionAllowed(MapViewerUserActions.Action.ACTION_GET_MORE_INFO_MAP);
+        boolean ifEdit = mapViewer.isActionAllowed(MapViewerUserActions.Action.ACTION_EDIT_MAP);
+        if (ifDelete) {
+            deleteBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // new window, where user can decide, if he is sure, that he want delete map
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setMessage("Czy na pewno chcesz usunąć mapę?")
+                            .setNegativeButton("Anuluj", null)
+                            .setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Toast.makeText(context, "you want delete map nr" + position, Toast.LENGTH_SHORT).show();
+                                    // here I have to remove element from maps list, but now it doesn't work correctly
+                                    //items.remove(position);
+                                }
+                            });
 
-        infoBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // new window with more informations about map
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle(items.get(position).getName());
-                builder.setMessage("Więcej informacji")
-                        .setNegativeButton("Zamknij", null);
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+            });
+        }
 
-                AlertDialog alert = builder.create();
-                alert.show();
-            }
-        });
+        if (ifInfo) {
+            infoBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // new window with more informations about map
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle(items.get(position).getName());
+                    builder.setMessage("Więcej informacji")
+                            .setNegativeButton("Zamknij", null);
+
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+            });
+        }
+
+        if (ifEdit) {
+            editMapBtn.setImageResource(R.drawable.ic_edit);
+            editMapBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // new window, where user can decide, if he want edit map
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setMessage("Czy chcesz edytować mapę?")
+                            .setNegativeButton("Anuluj", null)
+                            .setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Toast.makeText(context, "you want edit map nr" + position, Toast.LENGTH_SHORT).show();
+                                    // here we go to activity to edit map
+                                }
+                            });
+
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+            });
+        }
     }
 }
