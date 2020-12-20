@@ -2,6 +2,7 @@ package pl.ioad1.bauhinia.mapeditor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,8 +20,17 @@ public class MapEditorMainActivity extends AppCompatActivity {
         for (int i = 0; i < 25*25; i++){
             test[i] = 1;
         }
+
+        Tile[] tiles = new Tile[25 * 25];
+        for (int i = 0; i < 25 * 25; i++) {
+            tiles[i] = new Tile();
+            tiles[i].setId(i);
+            tiles[i].setTileBackground(Color.rgb(255,255,255));
+        }
+
         GridView gridView = (GridView) findViewById(R.id.gvTemplate);
-        TileAdapter tileAdapter = new TileAdapter(MapEditorMainActivity.this,test);
+        TileAdapter tileAdapter = new TileAdapter(MapEditorMainActivity.this, tiles); //test
         gridView.setAdapter(tileAdapter);
     }
+
 }
