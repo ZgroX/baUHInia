@@ -72,6 +72,7 @@ public class MapListAdapter extends BaseAdapter {
     public void ClickingButtons(int position, ImageButton deleteBtn, ImageButton infoBtn, ImageButton editMapBtn) {
         // use MapViewer to check, what actions are possible
         MapViewer mapViewer = MapViewer.getInstance();
+        BaseAdapter thisAdapter = this;
 
         // variables to know, what should be possible for user
         boolean ifDelete = mapViewer.isActionAllowed((MapViewerUserActions.Action.ACTION_DELETE_MAP));
@@ -83,7 +84,6 @@ public class MapListAdapter extends BaseAdapter {
                 public void onClick(View view) {
                     // new window, where user can decide, if he is sure, that he want delete map
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    Toast.makeText(context, "numbers of maps" + items.size(), Toast.LENGTH_SHORT).show();
                     builder.setMessage("Czy na pewno chcesz usunąć mapę?")
                             .setNegativeButton("Anuluj", null)
                             .setPositiveButton("Tak", new DialogInterface.OnClickListener() {
@@ -91,7 +91,7 @@ public class MapListAdapter extends BaseAdapter {
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     // remove the map from list
                                     items.remove(position);
-                                    Toast.makeText(context, "numbers of maps" + items.size(), Toast.LENGTH_SHORT).show();
+                                    thisAdapter.notifyDataSetChanged();
                                 }
                             });
 
