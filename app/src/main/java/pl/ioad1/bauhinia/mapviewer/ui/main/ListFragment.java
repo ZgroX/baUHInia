@@ -13,8 +13,8 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 
 import pl.ioad1.bauhinia.R;
-import pl.ioad1.bauhinia.mapviewer.logic.model.MapListItem;
-import pl.ioad1.bauhinia.mapviewer.logic.model.MapTemplateListItem;
+import pl.ioad1.bauhinia.sessionManager.model.MapListItem;
+import pl.ioad1.bauhinia.sessionManager.model.MapTemplateListItem;
 
 /**
  * Fragment that contains map list or map template list.
@@ -51,7 +51,7 @@ public class ListFragment extends Fragment {
             case MAP_LIST_FRAGMENT: {
                 ArrayList<MapListItem> items = new ArrayList<>();
                 for (int i = 0; i < 100; i++) {
-                    items.add(new MapListItem(i, "Map name " + Integer.toString(i), 0));
+                    items.add(new MapListItem(i, "Map name " + Integer.toString(i), 0, null));
                 }
 
                 ListView mapListView = (ListView) root.findViewById(R.id.map_list_view);
@@ -64,7 +64,7 @@ public class ListFragment extends Fragment {
             case MAP_TEMPLATE_LIST_FRAGMENT: {
                 ArrayList<MapTemplateListItem> items = new ArrayList<>();
                 for (int i = 0; i < 100; i++) {
-                    items.add(new MapTemplateListItem(i, "Map Template name " + Integer.toString(i), "District", i * 1000));
+                    items.add(new MapTemplateListItem(i, "Map Template name " + Integer.toString(i), "District", i * 1000, null));
                 }
 
                 ListView mapListView = (ListView) root.findViewById(R.id.map_list_view);

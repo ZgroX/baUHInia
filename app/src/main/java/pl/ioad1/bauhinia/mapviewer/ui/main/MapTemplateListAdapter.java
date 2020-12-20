@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import pl.ioad1.bauhinia.R;
 import pl.ioad1.bauhinia.mapviewer.logic.MapViewer;
 import pl.ioad1.bauhinia.mapviewer.logic.MapViewerUserActions;
-import pl.ioad1.bauhinia.mapviewer.logic.model.MapTemplateListItem;
+import pl.ioad1.bauhinia.sessionManager.model.MapTemplateListItem;
 
 public class MapTemplateListAdapter extends BaseAdapter {
     private Context context;
@@ -55,9 +55,9 @@ public class MapTemplateListAdapter extends BaseAdapter {
         TextView districtTextView = (TextView) view.findViewById(R.id.map_template_list_item_district_textview);
         TextView maxBudgetTextView = (TextView) view.findViewById(R.id.map_template_list_item_max_budget_textview);
 
-        nameTextView.setText("Nazwa: " + item.name);
-        districtTextView.setText("Dzielnica: " + item.district);
-        maxBudgetTextView.setText("Max budżet: " + Integer.toString(item.maxBudget));
+        nameTextView.setText("Nazwa: " + item.getName());
+        districtTextView.setText("Dzielnica: " + item.getDistrict());
+        maxBudgetTextView.setText("Max budżet: " + Integer.toString(item.getMaxBudget()));
 
         // Buttons, which can show more infos, delete or edit template
         ImageButton infoTemplateBtn = (ImageButton) view.findViewById(R.id.moreInfosTemplateBtn);

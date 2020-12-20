@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import pl.ioad1.bauhinia.R;
 import pl.ioad1.bauhinia.mapviewer.logic.MapViewer;
 import pl.ioad1.bauhinia.mapviewer.logic.MapViewerUserActions;
-import pl.ioad1.bauhinia.mapviewer.logic.model.MapListItem;
+import pl.ioad1.bauhinia.sessionManager.model.MapListItem;
 
 public class MapListAdapter extends BaseAdapter {
     private Context context;
@@ -56,8 +56,8 @@ public class MapListAdapter extends BaseAdapter {
         TextView mapNameTextView = (TextView) view.findViewById(R.id.map_list_item_name_textview);
         TextView mapTemplateNameTextView = (TextView) view.findViewById(R.id.map_list_item_map_template_name_textview);
 
-        mapNameTextView.setText("Nazwa: " + item.name);
-        mapTemplateNameTextView.setText("Id szablonu: " + Integer.toString(item.mapTemplateId));
+        mapNameTextView.setText("Nazwa: " + item.getName());
+        mapTemplateNameTextView.setText("Id szablonu: " + Integer.toString(item.getMapTemplateId()));
 
         // Button, which can show more infos, delete oraz edit map
         ImageButton deleteMapBtn = (ImageButton) view.findViewById(R.id.deleteMapBtn);
