@@ -4,15 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scaleType="centerCrop">
-<!--    android:src="@mipmap/ic_launcher"-->
 
 
     <ImageView
-        android:id="@+id/button_in_gird"
+        android:id="@+id/single_tile_image_view"
         android:layout_width="88dp"
         android:layout_height="77dp"
         android:backgroundTint="@color/white"/>
-<!--        android:contentDescription="@string/app_name" />-->
-    <!--        android:backgroundTint="@color/white"/>-->
 
 </pl.ioad1.bauhinia.mapeditor.GridViewItem>
