@@ -16,10 +16,9 @@ import android.widget.TextView;
 
 import com.example.elementeditor.R;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
+
+import pl.ioad1.bauhinia.sessionManager.model.Element;
 
 public class ElementCreator extends AppCompatActivity {
     private boolean elementChange = true;

@@ -1,9 +1,8 @@
 package pl.ioad1.bauhinia.elementeditor;
 
-import android.graphics.Bitmap;
-import android.provider.MediaStore;
-
 import java.util.ArrayList;
+
+import pl.ioad1.bauhinia.sessionManager.model.Element;
 
 
 public class ElementEditorCommunicator {

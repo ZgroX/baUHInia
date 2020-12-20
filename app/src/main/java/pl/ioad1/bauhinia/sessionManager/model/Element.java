@@ -1,7 +1,6 @@
-package pl.ioad1.bauhinia.elementeditor;
+package pl.ioad1.bauhinia.sessionManager.model;
 
 import android.graphics.Bitmap;
-import android.net.Uri;
 
 import java.io.Serializable;
 

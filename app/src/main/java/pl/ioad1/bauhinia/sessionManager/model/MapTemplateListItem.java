@@ -1,10 +1,13 @@
-package pl.ioad1.bauhinia.mapviewer.logic.model;
+package pl.ioad1.bauhinia.sessionManager.model;
+
+import java.util.List;
 
 public class MapTemplateListItem {
     private int id;
     private String name;
     private String district;
     private int maxBudget;
+    private List<PlacedElement> placedElements;
 
     public MapTemplateListItem(int id, String name, String district, int maxBudget) {
         this.id = id;

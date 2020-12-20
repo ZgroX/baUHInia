@@ -1,9 +1,7 @@
-package pl.ioad1.bauhinia.sessionManager.data;
+package pl.ioad1.bauhinia.sessionManager.model;
 
 import java.util.Arrays;
 import java.util.List;
-
-import pl.ioad1.bauhinia.elementeditor.Element;
 
 public class PlacedElement {
     private Element element;

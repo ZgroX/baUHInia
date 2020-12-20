@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import pl.ioad1.bauhinia.elementeditor.Element;
+import pl.ioad1.bauhinia.sessionManager.model.Element;
 import pl.ioad1.bauhinia.serverhttp.DatabaseProvider;
 import pl.ioad1.bauhinia.serverhttp.StorageProvider;
 

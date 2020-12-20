@@ -1,9 +1,6 @@
-package pl.ioad1.bauhinia.mapviewer.logic.model;
+package pl.ioad1.bauhinia.sessionManager.model;
 
 import java.util.List;
-
-import pl.ioad1.bauhinia.elementeditor.Element;
-import pl.ioad1.bauhinia.sessionManager.data.PlacedElement;
 
 public class MapListItem {
     private final int id;
