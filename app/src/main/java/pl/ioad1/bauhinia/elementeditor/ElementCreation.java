@@ -33,7 +33,6 @@ public class ElementCreation extends AppCompatActivity {
         setContentView(R.layout.activity_element_creation);
         table = findViewById(R.id.elementTable);
         addElement = findViewById(R.id.addElement);
-        getSupportActionBar().hide();
         elementEditorCommunicator = new ElementEditorCommunicator();
         elements = new ArrayList<>();
         refreshList();
