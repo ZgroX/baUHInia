@@ -41,7 +41,8 @@ public class MapProvider {
                     row.get("id"),
                     row.get("name"),
                     row.get("district"),
-                    row.get("maxBudget")));
+                    row.get("maxBudget"),
+                    row.get("placedElements")));
         }
 
         return mapTemplateList;

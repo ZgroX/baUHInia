@@ -36,6 +36,7 @@ public class MapSender {
         map.put("name", m.getName());
         map.put("district", m.getDistrict());
         map.put("maxBudget", m.getMaxBudget());
+        map.put("placedElements", m.getPlacedElements());
 
         return map;
     }
