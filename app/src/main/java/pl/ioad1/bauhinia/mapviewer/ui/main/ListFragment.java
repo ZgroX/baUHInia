@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -67,7 +68,9 @@ public class ListFragment extends Fragment {
                 }
 
                 ListView mapListView = (ListView) root.findViewById(R.id.map_list_view);
-                mapListView.setAdapter(new MapTemplateListAdapter(container.getContext(), items));
+
+                MapTemplateListAdapter adapter = new MapTemplateListAdapter(container.getContext(), items);
+                mapListView.setAdapter(adapter);
             }
                 break;
             default:

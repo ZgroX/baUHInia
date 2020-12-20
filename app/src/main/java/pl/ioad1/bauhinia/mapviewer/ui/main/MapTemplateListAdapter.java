@@ -55,16 +55,16 @@ public class MapTemplateListAdapter extends BaseAdapter {
         TextView districtTextView = (TextView) view.findViewById(R.id.map_template_list_item_district_textview);
         TextView maxBudgetTextView = (TextView) view.findViewById(R.id.map_template_list_item_max_budget_textview);
 
+        nameTextView.setText("Nazwa: " + item.name);
+        districtTextView.setText("Dzielnica: " + item.district);
+        maxBudgetTextView.setText("Max budżet: " + Integer.toString(item.maxBudget));
+
         // Buttons, which can show more infos, delete or edit template
         ImageButton infoTemplateBtn = (ImageButton) view.findViewById(R.id.moreInfosTemplateBtn);
         ImageButton deleteTemplateBtn = (ImageButton) view.findViewById(R.id.deleteTemplateBtn);
         ImageButton editTemplateBtn = (ImageButton) view.findViewById(R.id.editTemplateBtn);
 
         ClickingButtons(i, deleteTemplateBtn, infoTemplateBtn, editTemplateBtn);
-
-        nameTextView.setText(item.name);
-        districtTextView.setText(item.district);
-        maxBudgetTextView.setText(Integer.toString(item.maxBudget));
 
         return view;
     }
@@ -90,9 +90,8 @@ public class MapTemplateListAdapter extends BaseAdapter {
                             .setPositiveButton("Tak", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    Toast.makeText(context, "you want delete template nr" + position, Toast.LENGTH_SHORT).show();
-                                    // here I have to remove element from template list, but now it doesn't work correctly
-                                    //items.remove(position);
+                                    // remove the template from list
+                                    items.remove(position);
                                 }
                             });
 

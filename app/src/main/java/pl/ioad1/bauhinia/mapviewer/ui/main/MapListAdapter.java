@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -54,15 +56,15 @@ public class MapListAdapter extends BaseAdapter {
         TextView mapNameTextView = (TextView) view.findViewById(R.id.map_list_item_name_textview);
         TextView mapTemplateNameTextView = (TextView) view.findViewById(R.id.map_list_item_map_template_name_textview);
 
+        mapNameTextView.setText("Nazwa: " + item.name);
+        mapTemplateNameTextView.setText("Id szablonu: " + Integer.toString(item.mapTemplateId));
+
         // Button, which can show more infos, delete oraz edit map
         ImageButton deleteMapBtn = (ImageButton) view.findViewById(R.id.deleteMapBtn);
         ImageButton infoBtn = (ImageButton) view.findViewById(R.id.moreInfosMapBtn);
         ImageButton editBtn = (ImageButton) view.findViewById(R.id.editMapBtn);
 
         ClickingButtons(i, deleteMapBtn, infoBtn, editBtn);
-
-        mapNameTextView.setText(item.name);
-        mapTemplateNameTextView.setText(Integer.toString(item.mapTemplateId));
 
         return view;
     }
@@ -81,14 +83,15 @@ public class MapListAdapter extends BaseAdapter {
                 public void onClick(View view) {
                     // new window, where user can decide, if he is sure, that he want delete map
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    Toast.makeText(context, "numbers of maps" + items.size(), Toast.LENGTH_SHORT).show();
                     builder.setMessage("Czy na pewno chcesz usunąć mapę?")
                             .setNegativeButton("Anuluj", null)
                             .setPositiveButton("Tak", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    Toast.makeText(context, "you want delete map nr" + position, Toast.LENGTH_SHORT).show();
-                                    // here I have to remove element from maps list, but now it doesn't work correctly
-                                    //items.remove(position);
+                                    // remove the map from list
+                                    items.remove(position);
+                                    Toast.makeText(context, "numbers of maps" + items.size(), Toast.LENGTH_SHORT).show();
                                 }
                             });
 
