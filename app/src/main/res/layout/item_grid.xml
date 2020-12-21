@@ -8,8 +8,7 @@
 
     <ImageView
         android:id="@+id/single_tile_image_view"
-        android:layout_width="88dp"
-        android:layout_height="77dp"
-        android:backgroundTint="@color/white"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </pl.ioad1.bauhinia.mapeditor.GridViewItem>

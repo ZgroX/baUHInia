@@ -36,7 +36,6 @@ public class TileAdapter extends BaseAdapter {
         return position;
     }
 
-    //TODO:  dodac listenery, ktore otworza aktywnosc wyboru tła
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final Tile tile = tiles[position];
@@ -44,7 +43,7 @@ public class TileAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = thisInflater.inflate(R.layout.item_grid,parent,false);
             ImageView imageView = (ImageView) convertView.findViewById(R.id.single_tile_image_view);
-            imageView.setBackgroundColor(tile.getTileBackground());
+            imageView.setImageResource(R.drawable.grass);
         }
 
         return convertView;
