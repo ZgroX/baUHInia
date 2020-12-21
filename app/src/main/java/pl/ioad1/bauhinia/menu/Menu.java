@@ -9,6 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import pl.ioad1.bauhinia.R;
+import pl.ioad1.bauhinia.mapviewer.MapsPresentation;
 import pl.ioad1.bauhinia.menu.login.LoginDialog;
 import pl.ioad1.bauhinia.menu.settings.SettingsDialog;
 import pl.ioad1.bauhinia.menu.helpers.DarkModeHelper;
@@ -37,6 +38,7 @@ public class Menu extends AppCompatActivity {
     }
 
     public void showMapListsButtonOnClick(View v) {
+        new MapsPresentation(MapsPresentation.UserType.USER_CLERK, this);
 //        Intent intent = new Intent(this, MapList.class);
 //        startActivity(intent);
     }

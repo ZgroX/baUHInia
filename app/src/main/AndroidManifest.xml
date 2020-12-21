@@ -9,8 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BaUHInia">
-        <activity android:name="pl.ioad1.bauhinia.elementeditor.ElementCreator"></activity>
-        <activity android:name="pl.ioad1.bauhinia.elementeditor.ElementCreation"/>
         <activity android:name=".menu.Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".mapviewer.MapViewerMainActivity" />
+        <activity android:name=".elementeditor.ElementCreator" />
+        <activity android:name=".elementeditor.ElementCreation" />
     </application>
 
 </manifest>
