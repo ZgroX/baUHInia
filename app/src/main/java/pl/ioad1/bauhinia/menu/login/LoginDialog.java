@@ -17,7 +17,6 @@ import java.util.concurrent.TimeoutException;
 import pl.ioad1.bauhinia.R;
 import pl.ioad1.bauhinia.databinding.LoginDialogBinding;
 import pl.ioad1.bauhinia.menu.Menu;
-import pl.ioad1.bauhinia.menu.helpers.GlobalVariables;
 import pl.ioad1.bauhinia.sessionManager.Credentials;
 
 public class LoginDialog extends Dialog implements View.OnClickListener {
@@ -63,13 +62,11 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
         }
         try {
             if(Credentials.signIn(login, password)){
-//                GlobalVariables.getInstance().setUserAuthenticated(true);
                 if (this.onLoginListener != null) {
                     onLoginListener.onLoginSuccessful();
                 }
             } else {
                 Toast.makeText(this.context, "Authorization failed.", Toast.LENGTH_LONG).show();
-//                GlobalVariables.getInstance().setUserAuthenticated(false);
             }
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
             e.printStackTrace();
@@ -77,12 +74,13 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
         dismiss();
     }
 
+
     public void setOnLoginListener(OnLoginListener onLoginListener) {
         this.onLoginListener = onLoginListener;
     }
 
     public boolean checkIfInputsAreEmpty(String login, String password) {
-        return login.trim().length() > 0 || password.trim().length() > 0;
+        return login.trim().length() == 0 || password.trim().length() == 0;
     }
 
     public void onClickNo(View v) {

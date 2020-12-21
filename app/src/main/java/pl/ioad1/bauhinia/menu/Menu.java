@@ -14,9 +14,10 @@ import pl.ioad1.bauhinia.mapviewer.MapsPresentation;
 import pl.ioad1.bauhinia.menu.login.LoginDialog;
 import pl.ioad1.bauhinia.menu.settings.SettingsDialog;
 import pl.ioad1.bauhinia.menu.helpers.DarkModeHelper;
-import pl.ioad1.bauhinia.menu.helpers.GlobalVariables;
 import pl.ioad1.bauhinia.menu.helpers.SharedPreferencesHelper;
 import pl.ioad1.bauhinia.elementeditor.ElementCreation;
+import pl.ioad1.bauhinia.sessionManager.Credentials;
+
 public class Menu extends AppCompatActivity {
 
     @Override
@@ -48,7 +49,7 @@ public class Menu extends AppCompatActivity {
     }
 
     public void setElementEditorVisible() {
-        boolean isVisible = GlobalVariables.getInstance().isUserAuthenticated();
+        boolean isVisible = Credentials.getCurrentUser() != null;
         Button elementEditorButton = findViewById(R.id.elementEditorButton);
         if (isVisible) {
             elementEditorButton.setVisibility(View.VISIBLE);
