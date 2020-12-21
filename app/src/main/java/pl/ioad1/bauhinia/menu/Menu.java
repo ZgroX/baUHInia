@@ -4,8 +4,12 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import pl.ioad1.bauhinia.R;
 import pl.ioad1.bauhinia.menu.login.LoginDialog;
@@ -13,15 +17,29 @@ import pl.ioad1.bauhinia.menu.settings.SettingsDialog;
 import pl.ioad1.bauhinia.menu.helpers.DarkModeHelper;
 import pl.ioad1.bauhinia.menu.helpers.GlobalVariables;
 import pl.ioad1.bauhinia.menu.helpers.SharedPreferencesHelper;
+import pl.ioad1.bauhinia.sessionManager.Credentials;
+import pl.ioad1.bauhinia.sessionManager.CredentialsCallback;
 
 public class Menu extends AppCompatActivity {
-
+    ExecutorService executorService = Executors.newFixedThreadPool(4);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         DarkModeHelper.setDarkMode(SharedPreferencesHelper.isDarkMode(this));
         setElementEditorVisible();
+        TextView test = findViewById(R.id.textView);
+        Credentials credentials = Credentials.getInstance();
+        credentials.init(executorService);
+        credentials.signOut();
+        credentials.signIn("test@mail.com", "Pa$$w0rd", new CredentialsCallback<Boolean>() {
+            @Override
+            public void onComplete(Boolean result) {
+
+                test.setText(String.valueOf(result));
+            }
+        });
+
     }
 
     public void settingButtonOnClick(View v) {
