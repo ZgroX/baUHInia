@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import pl.ioad1.bauhinia.sessionManager.model.Element;
+
 public class HeatMap {
     ArrayList<String> materialNames;
     ArrayList<Double> materialFactors;
@@ -31,7 +33,7 @@ public class HeatMap {
                 20); // avg. air temperature (°C)
 
         // obliczenie wysokości cienia
-        double h = (element.getHeight())/(Math.tan(Math.toRadians(90-position.getZenithAngle())));
+        double h = (element.getHeight()) / (Math.tan(Math.toRadians(90 - position.getZenithAngle())));
         double p = 0;
 
         if (h > 0) {
@@ -43,7 +45,7 @@ public class HeatMap {
         return p;
     }
 
-    public  double ElementImpact(Element element) {
+    public double ElementImpact(Element element) {
         int w = element.getWidth();
         int l = element.getLength();
         float h = element.getHeight();
@@ -57,9 +59,10 @@ public class HeatMap {
             }
         }
          */
-        return w*l*h; //*f
+        return w * l * h; //*f
     }
 
-    public void generateHeatMap() { }
+    public void generateHeatMap() {
+    }
 
 }
