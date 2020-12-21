@@ -35,7 +35,7 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
                 e.printStackTrace();
             }
             finally {
-                // TODO: 21.12.2020 Przestaje się krecic kółko 
+                binding.loading.setVisibility(View.INVISIBLE);
             }
             if (LoginDialog.this.isSignedIn) {
                 if (LoginDialog.this.onLoginListener != null) {
@@ -93,6 +93,7 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
     private void sendCredentialsToSessionManager() {
         t = new Thread(loginRunnable);
         t.start();
+        binding.loading.setVisibility(View.VISIBLE);
     }
 
     public void setOnLoginListener(OnLoginListener onLoginListener) {
