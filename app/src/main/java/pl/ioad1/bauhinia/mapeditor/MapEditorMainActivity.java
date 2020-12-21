@@ -16,14 +16,15 @@ import android.widget.ImageView;
 import pl.ioad1.bauhinia.R;
 //TODO ogarnac to wszystko bo na razie jest mocno roboczo, zrobic siatke klikalna i zmieniajaca swoje tlo
 public class MapEditorMainActivity extends AppCompatActivity {
+    private static final int SQUARES = 625;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_editor_main);
 
-        Tile[] tiles = new Tile[25 * 25];
-        for (int i = 0; i < 25 * 25; i++) {
+        Tile[] tiles = new Tile[SQUARES];
+        for (int i = 0; i < SQUARES; i++) {
             tiles[i] = new Tile();
             tiles[i].setId(i);
             tiles[i].setTileBackground(Color.rgb(255,255,255));
