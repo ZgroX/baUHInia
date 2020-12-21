@@ -23,6 +23,8 @@ public class Menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Credentials.signOut();
+
         binding = ActivityMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         DarkModeHelper.setDarkMode(SharedPreferencesHelper.isDarkMode(this));
