@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.elementeditor.R;
+import pl.ioad1.bauhinia.R;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;

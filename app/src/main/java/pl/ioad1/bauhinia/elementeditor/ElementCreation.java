@@ -16,7 +16,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.example.elementeditor.R;
+import pl.ioad1.bauhinia.R;
 
 import java.util.ArrayList;
 
