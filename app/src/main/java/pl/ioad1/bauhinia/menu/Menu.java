@@ -4,26 +4,27 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import pl.ioad1.bauhinia.R;
+import pl.ioad1.bauhinia.databinding.ActivityMenuBinding;
 import pl.ioad1.bauhinia.elementeditor.ElementCreation;
 import pl.ioad1.bauhinia.mapviewer.MapsPresentation;
-import pl.ioad1.bauhinia.menu.login.LoginDialog;
-import pl.ioad1.bauhinia.menu.settings.SettingsDialog;
 import pl.ioad1.bauhinia.menu.helpers.DarkModeHelper;
 import pl.ioad1.bauhinia.menu.helpers.SharedPreferencesHelper;
-import pl.ioad1.bauhinia.elementeditor.ElementCreation;
+import pl.ioad1.bauhinia.menu.login.LoginDialog;
+import pl.ioad1.bauhinia.menu.settings.SettingsDialog;
 import pl.ioad1.bauhinia.sessionManager.Credentials;
 
 public class Menu extends AppCompatActivity {
 
+    private ActivityMenuBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMenuBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         DarkModeHelper.setDarkMode(SharedPreferencesHelper.isDarkMode(this));
         setElementEditorVisible();
     }
@@ -50,12 +51,15 @@ public class Menu extends AppCompatActivity {
 
     public void setElementEditorVisible() {
         boolean isVisible = Credentials.getCurrentUser() != null;
-        Button elementEditorButton = findViewById(R.id.elementEditorButton);
-        if (isVisible) {
-            elementEditorButton.setVisibility(View.VISIBLE);
-            return;
-        }
-        elementEditorButton.setVisibility(View.INVISIBLE);
+        runOnUiThread(() -> {
+            if (isVisible) {
+                binding.loginButton.setVisibility(View.INVISIBLE);
+                binding.elementEditorButton.setVisibility(View.VISIBLE);
+                return;
+            }
+            binding.loginButton.setVisibility(View.VISIBLE);
+            binding.elementEditorButton.setVisibility(View.INVISIBLE);
+        });
     }
 
 }
