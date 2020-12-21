@@ -1,12 +1,15 @@
 package pl.ioad1.bauhinia.elementeditor;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 
+import pl.ioad1.bauhinia.sessionManager.ElementProvider;
 import pl.ioad1.bauhinia.sessionManager.model.Element;
 
 
 public class ElementEditorCommunicator {
-//    private ElementProvider elementProvider;
+    private ElementProvider elementProvider;
     private ArrayList<Element> elements = new ArrayList<>();
 
     ArrayList<Element> dowloadList(){
@@ -23,12 +26,31 @@ public class ElementEditorCommunicator {
     }
     boolean saveElementChange(Element elementToSave){
         boolean ret=true;
-
+        try {
+            elementProvider.updateElement(elementToSave);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+            ret = false;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            ret = false;
+        }
         return ret;
     }
     boolean addElement(Element elementToSave){
         boolean ret=true;
-
+        try {
+            elementProvider.sendElement(elementToSave);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+            ret = false;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            ret = false;
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+            ret = false;
+        }
         return ret;
     }
     private void reloadList(){
