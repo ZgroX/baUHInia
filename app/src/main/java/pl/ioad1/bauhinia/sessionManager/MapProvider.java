@@ -9,8 +9,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import pl.ioad1.bauhinia.mapviewer.logic.model.MapListItem;
-import pl.ioad1.bauhinia.mapviewer.logic.model.MapTemplateListItem;
+import pl.ioad1.bauhinia.sessionManager.model.MapListItem;
+import pl.ioad1.bauhinia.sessionManager.model.MapTemplateListItem;
 import pl.ioad1.bauhinia.serverhttp.DatabaseProvider;
 
 public class MapProvider {
@@ -18,8 +18,8 @@ public class MapProvider {
         ArrayList<MapListItem> mapList = new ArrayList<>();
 
         QuerySnapshot table = Tasks.await(DatabaseProvider.getCollection(MapSender.STRING_MAPS), 10, TimeUnit.SECONDS);
-        for (DocumentSnapshot row : table.getDocuments()) {
 
+        for (DocumentSnapshot row : table.getDocuments()) {
             mapList.add(new MapListItem(
                     row.get("id"),
                     row.get("name"),
@@ -34,9 +34,8 @@ public class MapProvider {
         ArrayList<MapTemplateListItem> mapTemplateList = new ArrayList<>();
 
         QuerySnapshot table = Tasks.await(DatabaseProvider.getCollection(MapSender.STRING_MAPS_TEMPLATE), 10, TimeUnit.SECONDS);
-        for (DocumentSnapshot row :
-                table.getDocuments()) {
 
+        for (DocumentSnapshot row : table.getDocuments()) {
             mapTemplateList.add(new MapTemplateListItem(
                     row.get("id"),
                     row.get("name"),

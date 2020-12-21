@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/deleteBtn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/map_list_item_name_textview"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:textColor="@color/titles"
+        android:textSize="16sp"
+        android:paddingStart="10dp"/>
+
+    <TextView
+        android:id="@+id/map_list_item_map_template_name_textview"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/map_list_item_name_textview"
+        android:paddingBottom="5dp"
+        android:textColor="@color/titles"
+        android:textSize="16sp"
+        android:paddingStart="10dp" />
+
+    <ImageButton
+        android:id="@+id/editMapBtn"
+        android:layout_width="42dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/moreInfosMapBtn"
+        android:background="#696969"/>
+
+    <ImageButton
+        android:id="@+id/moreInfosMapBtn"
+        android:layout_width="42dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/deleteMapBtn"
+        android:background="@color/background_color"
+        app:srcCompat="@android:drawable/ic_info" />
+
+    <ImageButton
+        android:id="@+id/deleteMapBtn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/background_color"
+        app:srcCompat="@drawable/ic_delete" />
+
+
+</RelativeLayout>

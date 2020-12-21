@@ -1,27 +1,21 @@
-package pl.ioad1.bauhinia.mapviewer.logic.model;
+package pl.ioad1.bauhinia.sessionManager.model;
 
 import java.util.List;
 
-import pl.ioad1.bauhinia.elementeditor.Element;
-import pl.ioad1.bauhinia.sessionManager.data.PlacedElement;
-
-public class MapListItem {
-    private final int id;
+public abstract class MapItem {
+    private int id;
     private String name;
-    private int mapTemplateId;
     private List<PlacedElement> placedElements;
 
-    public MapListItem(int id, String name, int mapTemplateId, List<PlacedElement> placedElements) {
+    public MapItem(int id, String name, List<PlacedElement> placedElements) {
         this.id = id;
         this.name = name;
-        this.mapTemplateId = mapTemplateId;
         this.placedElements = placedElements;
     }
 
-    public MapListItem(Object id, Object name, Object mapTemplateId, Object placedElements) {
+    public MapItem(Object id, Object name, Object placedElements) {
         this.id = (int) id;
         this.name = (String) name;
-        this.mapTemplateId = (int) mapTemplateId;
         this.placedElements = (List<PlacedElement>) placedElements;
     }
 
@@ -35,14 +29,6 @@ public class MapListItem {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getMapTemplateId() {
-        return mapTemplateId;
-    }
-
-    public void setMapTemplateId(int mapTemplateId) {
-        this.mapTemplateId = mapTemplateId;
     }
 
     public void addPlacedElement(PlacedElement placedElement) {
