@@ -23,6 +23,7 @@ public class Credentials {
     public static void signOut() {
         mAuth.signOut();
     }
+
     public static FirebaseUser getCurrentUser() {
         return mAuth.getCurrentUser();
     }
