@@ -12,20 +12,22 @@ public class ElementEditorCommunicator {
     private ElementProvider elementProvider;
     private ArrayList<Element> elements = new ArrayList<>();
 
-    ArrayList<Element> dowloadList(){
+    ArrayList<Element> dowloadList() {
         reloadList();
         return elements;
     }
-    Element getElementById(int id){
+
+    Element getElementById(int id) {
         reloadList();
-        for(Element element : elements){
-            if(id==element.getId())
+        for (Element element : elements) {
+            if (id == element.getId())
                 return element;
         }
         return null;
     }
-    boolean saveElementChange(Element elementToSave){
-        boolean ret=true;
+
+    boolean saveElementChange(Element elementToSave) {
+        boolean ret = true;
         try {
             elementProvider.updateElement(elementToSave);
         } catch (ExecutionException e) {
@@ -37,8 +39,9 @@ public class ElementEditorCommunicator {
         }
         return ret;
     }
-    boolean addElement(Element elementToSave){
-        boolean ret=true;
+
+    boolean addElement(Element elementToSave) {
+        boolean ret = true;
         try {
             elementProvider.sendElement(elementToSave);
         } catch (ExecutionException e) {
@@ -53,19 +56,20 @@ public class ElementEditorCommunicator {
         }
         return ret;
     }
-    private void reloadList(){
+
+    private void reloadList() {
         elements.clear();
 
-        for(int i = 1 ; i < 21 ; i++)
-            elements.add(new Element(i,i,i,"Name"+i, null ,i,i));
+        for (int i = 1; i < 21; i++)
+            elements.add(new Element(i, i, i, "Name" + i, null, i, i));
     }
 
     public int generateId() {
         int id = 1;
         reloadList();
-        while(true){
-            for(Element element : elements){
-                if(id!=element.getId())
+        while (true) {
+            for (Element element : elements) {
+                if (id != element.getId())
                     return id;
                 id++;
             }

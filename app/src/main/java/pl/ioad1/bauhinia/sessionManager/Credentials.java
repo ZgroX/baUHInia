@@ -1,5 +1,6 @@
 package pl.ioad1.bauhinia.sessionManager;
 
+import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
