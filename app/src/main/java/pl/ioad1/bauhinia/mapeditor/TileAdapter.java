@@ -42,8 +42,7 @@ public class TileAdapter extends BaseAdapter {
 
         if (convertView == null) {
             convertView = thisInflater.inflate(R.layout.item_grid,parent,false);
-            ImageView imageView = (ImageView) convertView.findViewById(R.id.single_tile_image_view);
-            imageView.setImageResource(R.drawable.grass);
+            ((GridViewItem)convertView).changeTileBackground(R.drawable.grass);
         }
 
         return convertView;

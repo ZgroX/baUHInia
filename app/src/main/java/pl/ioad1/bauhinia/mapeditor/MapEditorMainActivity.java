@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import pl.ioad1.bauhinia.R;
 //TODO ogarnac to wszystko bo na razie jest mocno roboczo, zrobic siatke klikalna i zmieniajaca swoje tlo
@@ -38,25 +39,21 @@ public class MapEditorMainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                GridViewItem item = (GridViewItem) view;
                 AlertDialog.Builder builder = new AlertDialog.Builder(
                         MapEditorMainActivity.this, R.style.MyDialogTheme);
                 builder.setTitle("Wybierz tlo");
                 builder.setItems(backgrounds, new DialogInterface.OnClickListener() {
-                    //TODO: tu wykorzystac setTileBackground
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if ("water".equals(backgrounds[which])) {
-                            ImageView background = view.findViewById(R.id.single_tile_image_view);
-                            background.setImageResource(R.drawable.water);
+                            item.changeTileBackground(R.drawable.water);
                         } else if ("road".equals(backgrounds[which])) {
-                            ImageView background = view.findViewById(R.id.single_tile_image_view);
-                            background.setImageResource(R.drawable.road);
+                            item.changeTileBackground(R.drawable.road);
                         } else if ("sidewalk".equals(backgrounds[which])) {
-                            ImageView background = view.findViewById(R.id.single_tile_image_view);
-                            background.setImageResource(R.drawable.road); // sidewalk.jpg miał za duzy rozmiar, na razie zamiast sidewalk pokazuje się road, będzie zmienione
+                            item.changeTileBackground(R.drawable.road); // sidewalk.jpg miał za duzy rozmiar, na razie zamiast sidewalk pokazuje się road, będzie zmienione
                         } else if ("grass".equals(backgrounds[which])) {
-                            ImageView background = view.findViewById(R.id.single_tile_image_view);
-                            background.setImageResource(R.drawable.grass);
+                            item.changeTileBackground(R.drawable.grass);
                         }
                     }
                 });
