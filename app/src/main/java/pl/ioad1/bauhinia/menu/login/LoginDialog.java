@@ -55,7 +55,6 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
     }
 
     public void onClickYes(View v) {
-        // TODO: 18.12.2020 Przesyłać użytkownika dane
         String login = ((EditText) findViewById(R.id.editTextLogin)).getText().toString();
         String password = ((EditText) findViewById(R.id.editTextPassword)).getText().toString();
         if (checkIfInputsAreEmpty(login, password)) {

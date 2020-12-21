@@ -16,23 +16,23 @@ public class SharedPreferencesHelper {
     }
 
     public static boolean isDarkMode(@NonNull Context context) {
-        return context.getSharedPreferences("settings", Context.MODE_PRIVATE).getBoolean("darkmode", false);
+        return context.getSharedPreferences("settings", Context.MODE_PRIVATE).getBoolean("darkMode", false);
     }
 
-    public static void saveDarkmode(@NonNull Context context, boolean darkMode) {
+    public static void saveDarkMode(@NonNull Context context, boolean darkMode) {
         SharedPreferences.Editor editor = context.getSharedPreferences("settings", Context.MODE_PRIVATE).edit();
-        editor.putBoolean("darkmode", darkMode);
+        editor.putBoolean("darkMode", darkMode);
         editor.apply();
         DarkModeHelper.setDarkMode(darkMode);
     }
 
-    public static boolean isMapAutosave(@NonNull Context context) {
-        return context.getSharedPreferences("settings", Context.MODE_PRIVATE).getBoolean("autosave", false);
+    public static boolean isMapAutoSave(@NonNull Context context) {
+        return context.getSharedPreferences("settings", Context.MODE_PRIVATE).getBoolean("autoSave", false);
     }
 
-    public static void saveMapAutosave(@NonNull Context context, boolean autosave) {
+    public static void saveMapAutoSave(@NonNull Context context, boolean autoSave) {
         SharedPreferences.Editor editor = context.getSharedPreferences("settings", Context.MODE_PRIVATE).edit();
-        editor.putBoolean("autosave", autosave);
+        editor.putBoolean("autoSave", autoSave);
         editor.apply();
     }
 

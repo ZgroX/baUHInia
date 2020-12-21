@@ -51,8 +51,8 @@ public class SettingsDialog extends Dialog implements View.OnClickListener {
     }
 
     public void onClickYes(View v) {
-        SharedPreferencesHelper.saveDarkmode(context, ((CheckBox) findViewById(R.id.dark_mode_checkbox)).isChecked());
-        SharedPreferencesHelper.saveMapAutosave(context, ((CheckBox) findViewById(R.id.map_autosave_checkbox)).isChecked());
+        SharedPreferencesHelper.saveDarkMode(context, ((CheckBox) findViewById(R.id.dark_mode_checkbox)).isChecked());
+        SharedPreferencesHelper.saveMapAutoSave(context, ((CheckBox) findViewById(R.id.map_autosave_checkbox)).isChecked());
         SharedPreferencesHelper.saveMuted(context, ((CheckBox) findViewById(R.id.mute_checkbox)).isChecked());
         SharedPreferencesHelper.saveUsername(context, ((EditText) findViewById(R.id.edit_text_user_nickname)).getText().toString());
         dismiss();
