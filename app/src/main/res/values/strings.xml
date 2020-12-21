@@ -15,4 +15,7 @@
     <string name="button_yes">Apply</string>
     <string name="button_no">Cancel</string>
     <string name="enter_nickname">Enter Nickname</string>
+    <string name="title_activity_map_viewer_main">MapViewerMainActivity</string>
+    <string name="tab_text_1">MAPY</string>
+    <string name="tab_text_2">SZABLONY MAP</string>
 </resources>

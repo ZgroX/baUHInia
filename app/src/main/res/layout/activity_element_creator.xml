@@ -31,7 +31,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name: "
-                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
             </TableRow>
@@ -52,7 +51,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Height (m):"
-                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <EditText
@@ -70,7 +68,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Length: 0.5m* "
-                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <EditText
@@ -88,7 +85,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Width: 0.5m* "
-                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <EditText
@@ -106,7 +102,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Transparent: "
-                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <EditText

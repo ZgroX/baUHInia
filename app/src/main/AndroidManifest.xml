@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".mapviewer.MapViewerMainActivity" />
+        <activity android:name=".elementeditor.ElementCreator" />
+        <activity android:name=".elementeditor.ElementCreation" />
     </application>
 
 </manifest>
