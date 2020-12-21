@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -36,6 +38,8 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
             }
             finally {
                 binding.loading.setVisibility(View.INVISIBLE);
+                binding.loading.startAnimation(aniRotate);
+                binding.loading.clearAnimation();
             }
             if (LoginDialog.this.isSignedIn) {
                 if (LoginDialog.this.onLoginListener != null) {
@@ -94,6 +98,8 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
         t = new Thread(loginRunnable);
         t.start();
         binding.loading.setVisibility(View.VISIBLE);
+        Animation aniRotate = AnimationUtils.loadAnimation(this.context,R.anim.rotate);
+        binding.loading.startAnimation(aniRotate);
     }
 
     public void setOnLoginListener(OnLoginListener onLoginListener) {
