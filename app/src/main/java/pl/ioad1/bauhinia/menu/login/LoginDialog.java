@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -33,11 +35,11 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
                 isSignedIn = Credentials.signIn(((EditText) findViewById(R.id.editTextLogin)).getText().toString(), ((EditText) findViewById(R.id.editTextPassword)).getText().toString());
             } catch (InterruptedException | ExecutionException | TimeoutException e) {
                 e.printStackTrace();
+            } finally {
+                binding.loading.setVisibility(View.INVISIBLE);
+                binding.loading.clearAnimation();
             }
-            finally {
-                // TODO: 21.12.2020 Przestaje się krecic kółko 
-            }
-            if (LoginDialog.this.isSignedIn) {
+            if (isSignedIn) {
                 if (LoginDialog.this.onLoginListener != null) {
                     onLoginListener.onLoginSuccessful();
                 }
@@ -84,7 +86,7 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
         String login = ((EditText) findViewById(R.id.editTextLogin)).getText().toString();
         String password = ((EditText) findViewById(R.id.editTextPassword)).getText().toString();
         if (checkIfInputsAreEmpty(login, password)) {
-            Toast.makeText(this.context, "Inputs can not be empty!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this.context, R.string.empty_inputs, Toast.LENGTH_LONG).show();
             return;
         }
         sendCredentialsToSessionManager();
@@ -93,6 +95,9 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
     private void sendCredentialsToSessionManager() {
         t = new Thread(loginRunnable);
         t.start();
+        binding.loading.setVisibility(View.VISIBLE);
+        Animation aniRotate = AnimationUtils.loadAnimation(this.context, R.anim.rotate);
+        binding.loading.startAnimation(aniRotate);
     }
 
     public void setOnLoginListener(OnLoginListener onLoginListener) {
