@@ -19,4 +19,5 @@
     <string name="title_activity_map_viewer_main">MapViewerMainActivity</string>
     <string name="tab_text_1">MAPY</string>
     <string name="tab_text_2">SZABLONY MAP</string>
+    <string name="empty_inputs">Inputs can not be empty!</string>
 </resources>

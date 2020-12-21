@@ -35,13 +35,11 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
                 isSignedIn = Credentials.signIn(((EditText) findViewById(R.id.editTextLogin)).getText().toString(), ((EditText) findViewById(R.id.editTextPassword)).getText().toString());
             } catch (InterruptedException | ExecutionException | TimeoutException e) {
                 e.printStackTrace();
-            }
-            finally {
+            } finally {
                 binding.loading.setVisibility(View.INVISIBLE);
-                binding.loading.startAnimation(aniRotate);
                 binding.loading.clearAnimation();
             }
-            if (LoginDialog.this.isSignedIn) {
+            if (isSignedIn) {
                 if (LoginDialog.this.onLoginListener != null) {
                     onLoginListener.onLoginSuccessful();
                 }
@@ -88,7 +86,7 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
         String login = ((EditText) findViewById(R.id.editTextLogin)).getText().toString();
         String password = ((EditText) findViewById(R.id.editTextPassword)).getText().toString();
         if (checkIfInputsAreEmpty(login, password)) {
-            Toast.makeText(this.context, "Inputs can not be empty!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this.context, R.string.empty_inputs, Toast.LENGTH_LONG).show();
             return;
         }
         sendCredentialsToSessionManager();
@@ -98,7 +96,7 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
         t = new Thread(loginRunnable);
         t.start();
         binding.loading.setVisibility(View.VISIBLE);
-        Animation aniRotate = AnimationUtils.loadAnimation(this.context,R.anim.rotate);
+        Animation aniRotate = AnimationUtils.loadAnimation(this.context, R.anim.rotate);
         binding.loading.startAnimation(aniRotate);
     }
 
