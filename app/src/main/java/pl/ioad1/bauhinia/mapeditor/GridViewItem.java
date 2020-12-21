@@ -5,6 +5,8 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import pl.ioad1.bauhinia.R;
+
 public class GridViewItem extends LinearLayout {
 
     public GridViewItem(Context context) {
@@ -24,4 +26,10 @@ public class GridViewItem extends LinearLayout {
         super.onMeasure(widthMeasureSpec, widthMeasureSpec); // This is the key that will make the
                                                              // height equivalent to its width
     }
+
+    public void changeTileBackground(int background) {
+        ImageView imageView = findViewById(R.id.single_tile_image_view);
+        imageView.setImageResource(background);
+    }
+
 }
