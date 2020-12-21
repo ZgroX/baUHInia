@@ -1,5 +1,6 @@
 package pl.ioad1.bauhinia.menu.login;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -24,6 +25,29 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
     private LoginDialogBinding binding;
     private OnLoginListener onLoginListener;
     private Context context;
+    private boolean isSignedIn;
+    private final Runnable loginRunnable = new Runnable() {
+        @Override
+        public void run() {
+            try {
+                isSignedIn = Credentials.signIn(((EditText) findViewById(R.id.editTextLogin)).getText().toString(), ((EditText) findViewById(R.id.editTextPassword)).getText().toString());
+            } catch (InterruptedException | ExecutionException | TimeoutException e) {
+                e.printStackTrace();
+            }
+            finally {
+                // TODO: 21.12.2020 Przestaje się krecic kółko 
+            }
+            if (LoginDialog.this.isSignedIn) {
+                if (LoginDialog.this.onLoginListener != null) {
+                    onLoginListener.onLoginSuccessful();
+                }
+                ((Activity) (context)).runOnUiThread(LoginDialog.this::dismiss);
+            } else {
+                ((Activity) (context)).runOnUiThread(() -> Toast.makeText(LoginDialog.this.context, "Authorization failed.", Toast.LENGTH_LONG).show());
+            }
+        }
+    };
+    private Thread t;
 
     public LoginDialog(@NonNull Menu menu) {
         this((Context) menu);
@@ -54,26 +78,22 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
     }
 
     public void onClickYes(View v) {
+        if (t != null && t.isAlive()) {
+            return;
+        }
         String login = ((EditText) findViewById(R.id.editTextLogin)).getText().toString();
         String password = ((EditText) findViewById(R.id.editTextPassword)).getText().toString();
         if (checkIfInputsAreEmpty(login, password)) {
             Toast.makeText(this.context, "Inputs can not be empty!", Toast.LENGTH_LONG).show();
             return;
         }
-        try {
-            if(Credentials.signIn(login, password)){
-                if (this.onLoginListener != null) {
-                    onLoginListener.onLoginSuccessful();
-                }
-            } else {
-                Toast.makeText(this.context, "Authorization failed.", Toast.LENGTH_LONG).show();
-            }
-        } catch (InterruptedException | ExecutionException | TimeoutException e) {
-            e.printStackTrace();
-        }
-        dismiss();
+        sendCredentialsToSessionManager();
     }
 
+    private void sendCredentialsToSessionManager() {
+        t = new Thread(loginRunnable);
+        t.start();
+    }
 
     public void setOnLoginListener(OnLoginListener onLoginListener) {
         this.onLoginListener = onLoginListener;
@@ -91,7 +111,6 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
     public void onClick(View v) {
 
     }
-
 
     public interface OnLoginListener {
         void onLoginSuccessful();
