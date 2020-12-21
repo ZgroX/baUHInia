@@ -2,6 +2,7 @@ package pl.ioad1.bauhinia.mapviewer.ui.main;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import androidx.appcompat.app.AlertDialog;
 import java.util.ArrayList;
 
 import pl.ioad1.bauhinia.R;
+import pl.ioad1.bauhinia.mapeditor.MapEditorMainActivity;
 import pl.ioad1.bauhinia.mapviewer.logic.MapViewer;
 import pl.ioad1.bauhinia.mapviewer.logic.MapViewerUserActions;
 import pl.ioad1.bauhinia.sessionManager.model.MapListItem;

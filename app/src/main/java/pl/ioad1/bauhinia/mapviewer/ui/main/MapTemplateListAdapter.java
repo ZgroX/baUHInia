@@ -2,6 +2,7 @@ package pl.ioad1.bauhinia.mapviewer.ui.main;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AlertDialog;
 import java.util.ArrayList;
 
 import pl.ioad1.bauhinia.R;
+import pl.ioad1.bauhinia.mapeditor.MapEditorMainActivity;
 import pl.ioad1.bauhinia.mapviewer.logic.MapViewer;
 import pl.ioad1.bauhinia.mapviewer.logic.MapViewerUserActions;
 import pl.ioad1.bauhinia.sessionManager.model.MapTemplateListItem;
@@ -129,8 +131,9 @@ public class MapTemplateListAdapter extends BaseAdapter {
                             .setPositiveButton("Tak", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    Toast.makeText(context, "you want edit template nr" + position, Toast.LENGTH_SHORT).show();
                                     // here we go to activity to edit template
+                                    Intent intent = new Intent(context, MapEditorMainActivity.class);
+                                    context.startActivity(intent);
                                 }
                             });
 
