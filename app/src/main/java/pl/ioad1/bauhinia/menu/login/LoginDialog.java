@@ -6,20 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import pl.ioad1.bauhinia.menu.Menu;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
+
 import pl.ioad1.bauhinia.R;
-import pl.ioad1.bauhinia.menu.user.User;
 import pl.ioad1.bauhinia.databinding.LoginDialogBinding;
+import pl.ioad1.bauhinia.menu.Menu;
 import pl.ioad1.bauhinia.menu.helpers.GlobalVariables;
+import pl.ioad1.bauhinia.sessionManager.Credentials;
 
 public class LoginDialog extends Dialog implements View.OnClickListener {
 
     private LoginDialogBinding binding;
     private OnLoginListener onLoginListener;
+    private Context context;
 
     public LoginDialog(@NonNull Menu menu) {
         this((Context) menu);
@@ -27,6 +32,7 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
 
     public LoginDialog(@NonNull Context context) {
         super(context);
+        this.context = context;
     }
 
     public LoginDialog(@NonNull Context context, int themeResId) {
@@ -50,16 +56,34 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
 
     public void onClickYes(View v) {
         // TODO: 18.12.2020 Przesyłać użytkownika dane
-        User user = new User(((EditText) findViewById(R.id.editTextLogin)).getText().toString(), ((EditText) findViewById(R.id.editTextPassword)).getText().toString());
-        GlobalVariables.getInstance().setUserAuthenticated(true);
-        dismiss();
-        if (this.onLoginListener != null) {
-            onLoginListener.onLoginSuccessful();
+        String login = ((EditText) findViewById(R.id.editTextLogin)).getText().toString();
+        String password = ((EditText) findViewById(R.id.editTextPassword)).getText().toString();
+        if (checkIfInputsAreEmpty(login, password)) {
+            Toast.makeText(this.context, "Inputs can not be empty!", Toast.LENGTH_LONG).show();
+            return;
         }
+        try {
+            if(Credentials.signIn(login, password)){
+//                GlobalVariables.getInstance().setUserAuthenticated(true);
+                if (this.onLoginListener != null) {
+                    onLoginListener.onLoginSuccessful();
+                }
+            } else {
+                Toast.makeText(this.context, "Authorization failed.", Toast.LENGTH_LONG).show();
+//                GlobalVariables.getInstance().setUserAuthenticated(false);
+            }
+        } catch (InterruptedException | ExecutionException | TimeoutException e) {
+            e.printStackTrace();
+        }
+        dismiss();
     }
 
     public void setOnLoginListener(OnLoginListener onLoginListener) {
         this.onLoginListener = onLoginListener;
+    }
+
+    public boolean checkIfInputsAreEmpty(String login, String password) {
+        return login.trim().length() > 0 || password.trim().length() > 0;
     }
 
     public void onClickNo(View v) {
